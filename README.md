@@ -1,16 +1,20 @@
 # Decidim::FriendlySignup
 
+[![[CI] Lint](https://github.com/OpenSourcePolitics/decidim-module-friendly_signup/actions/workflows/lint.yml/badge.svg)](https://github.com/OpenSourcePolitics/decidim-module-friendly_signup/actions/workflows/lint.yml)
 [![[CI] Test](https://github.com/OpenSourcePolitics/decidim-module-friendly_signup/actions/workflows/test.yml/badge.svg)](https://github.com/OpenSourcePolitics/decidim-module-friendly_signup/actions/workflows/test.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/46c261f70f7f49a8f385/maintainability)](https://codeclimate.com/github/OpenSourcePolitics/decidim-module-friendly_signup/maintainability)
 [![Test Coverage](https://codecov.io/gh/OpenSourcePolitics/decidim-module-friendly_signup/branch/main/graph/badge.svg?token=1lrOiLdy9P)](https://codecov.io/gh/OpenSourcePolitics/decidim-module-friendly_signup)
+[![Gem Version](https://badge.fury.io/rb/decidim-friendly_signup.svg)](https://badge.fury.io/rb/decidim-friendly_signup)
+
 ---
-A more user friendly approach for the user registration process.
+
+A more user friendly approach for the user registration process in [Decidim](https://github.com/decidim/decidim).
 
 ## Usage
 
 This module simply substitutes some pages to ease up the registration process in Decidim.
 
-Features:
+### Features:
 
 - [x] Simplify the password field and add a button with a "show password". ![Show/hide password](examples/passwords.png)
  
@@ -38,9 +42,20 @@ And then execute:
 bundle
 ```
 
+**Note:**
+
+The correct version of FriendlySignup should resolved automatically by the Bundler.
+However you can force some specific version using `gem "decidim-friendly_signup", "~> 0.1.0"` in the Gemfile.
+
+Depending on your Decidim version, choose the corresponding FriendlySignup version to ensure compatibility:
+
+| FriendlySignup version | Compatible Decidim versions |
+|---|---|
+| 0.1.x | 0.26.x |
+
 ## Configuration
 
-Customize your integration by creating an initializer (ie: `config/initializes/friendly_signup.rb`) and set some of the variables:
+Customize your integration by creating an initializer (ie: `config/initializes/friendly_signup.rb`) and set some of the variables (you don't need to do this if you want all features enabled):
 
 ```ruby
 # config/initializers/friendly_signup.rb
@@ -49,12 +64,18 @@ Decidim::FriendlySignup.configure do |config|
   # Override password views or leave the originals (default is true):
   config.override_passwords = false
 end
-
 ```
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/OpenSourcePolitics/decidim-module-friendly_signup.
+
+### Localization
+
+If you would like to see this module in your own language, you can help with its
+translation at Crowdin:
+
+https://crowdin.com/project/decidim-friendly-signup
 
 ### Developing
 
@@ -133,22 +154,12 @@ commands shown above.
 
 ### Test code coverage
 
-If you want to generate the code coverage report for the tests, you can use
-the `SIMPLECOV=1` environment variable in the rspec command as follows:
+Test coverage should be generated automatically in the folder "coverage" once any test is run:
 
 ```bash
-$ SIMPLECOV=1 bundle exec rspec
+$ bundle exec rspec
+$ firefox coverage/index.html
 ```
-
-This will generate a folder named `coverage` in the project root which contains
-the code coverage report.
-
-### Localization
-
-If you would like to see this module in your own language, you can help with its
-translation at Crowdin:
-
-https://crowdin.com/project/decidim-friendly-signup
 
 ## License
 
