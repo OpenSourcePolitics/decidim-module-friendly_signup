@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     decidim-friendly_signup (0.1)
-      decidim-core (= 0.26.2)
+      decidim-core (~> 0.26.0)
 
 GEM
   remote: https://rubygems.org/

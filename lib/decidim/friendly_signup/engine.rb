@@ -19,12 +19,6 @@ module Decidim
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
       end
 
-      routes do
-        # Add engine routes here
-        # resources :friendly_signup
-        # root to: "friendly_signup#index"
-      end
-
       initializer "FriendlySignup.webpacker.assets_path" do
         Decidim.register_assets_path File.expand_path("app/packs", root)
       end
