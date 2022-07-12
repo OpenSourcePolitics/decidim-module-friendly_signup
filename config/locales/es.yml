@@ -1,6 +1,10 @@
 ---
 es:
   decidim:
-    components:
-      friendly_signup:
-        name: FriendlySignup
+    friendly_signup:
+      shared:
+        password_fields:
+          hidden_password: Your password is hidden
+          hide_password: Hide password
+          show_password: Show password
+          shown_password: Your password is shown
