@@ -25,10 +25,30 @@ Add this line to your application's Gemfile:
 gem "decidim-friendly_signup"
 ```
 
+For a bleeding edge version (or while developing) please use instead:
+
+```ruby
+gem "decidim-friendly_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-friendly_signup", branch: "main"
+```
+
 And then execute:
 
 ```bash
 bundle
+```
+
+## Configuration
+
+Customize your integration by creating an initializer (ie: `config/initializes/friendly_signup.rb`) and set some of the variables:
+
+```ruby
+# config/initializers/friendly_signup.rb
+
+Decidim::FriendlySignup.configure do |config|
+  # Override password views or leave the originals (default is true):
+  config.passwords = false
+end
+
 ```
 
 ## Contributing
