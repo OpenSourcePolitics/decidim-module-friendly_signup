@@ -1,0 +1,10 @@
+version: 2
+
+secret:
+  ignored-paths:
+    - '**/README.md'
+    - spec/lib/overrides_spec.rb
+    - LICENSE*
+    - .gitignore
+    - .env
+    - .rbenv-vars

@@ -1,0 +1,52 @@
+@import "stylesheets/decidim/variables";
+@import "stylesheets/decidim/utils/settings";
+
+.input-inline-group {
+  position: relative;
+  display: block;
+
+  .input-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    margin-top: .5em;
+    width: 1%;
+
+    button {
+      .icon {
+        width: 1.125em;
+        height: 1.125em;
+        margin: 5px;
+        color: $black;
+      }
+
+      &.crossed {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          background:
+            linear-gradient(
+              to right bottom,
+              transparent calc(50% - 1px),
+              black calc(50% - 1px),
+              black calc(50% + 1px),
+              transparent calc(50% + 1px)
+            ) no-repeat 0 0 / 100% 100%;
+          width: calc(100% - 10px);
+          height: calc(100% - 10px);
+        }
+      }
+    }
+  }
+}
+
+.register-form {
+  .input-group {
+    margin-top: .75em;
+  }
+}

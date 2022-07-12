@@ -9,7 +9,10 @@ checksums = [
   {
     package: "decidim-core",
     files: {
-      # "/app/commands/decidim/create_omniauth_registration.rb" => "10fc028fa6a7bef9936e6f9edb9b167b"
+      "/app/views/decidim/devise/registrations/new.html.erb" => "a5c41982216b2a22b90816e66cb8286b",
+      "/app/views/decidim/devise/passwords/edit.html.erb" => "ea44db0114e1c201cc0f490b4899b8a8",
+      "/app/views/decidim/devise/invitations/edit.html.erb" => "435073cbee6b4aaa18da7932e449e6bb",
+      "/app/views/decidim/account/_password_fields.html.erb" => "1f0c1dfc65f96f258e6fad41af41c51a"
     }
   }
 ]
