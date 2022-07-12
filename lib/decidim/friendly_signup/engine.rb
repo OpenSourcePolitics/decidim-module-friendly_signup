@@ -14,6 +14,7 @@ module Decidim
       # overrides
       config.after_initialize do
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
+        Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
       end
 
       routes do
