@@ -16,7 +16,9 @@ Gem::Specification.new do |s|
   s.summary = "A decidim friendly_signup module"
   s.description = "A more user friendly approach for the user registration process."
 
-  s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "package.json", "package-lock.json", "Rakefile", "README.md"]
 
   s.add_dependency "decidim-core", Decidim::FriendlySignup::DECIDIM_VERSION
+
+  s.add_development_dependency "decidim-dev", "~> #{Decidim::FriendlySignup::DECIDIM_VERSION}"
 end
