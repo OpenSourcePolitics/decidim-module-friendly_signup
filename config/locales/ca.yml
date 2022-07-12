@@ -4,7 +4,7 @@ ca:
     friendly_signup:
       shared:
         password_fields:
-          hidden_password: Your password is hidden
-          hide_password: Hide password
-          show_password: Show password
-          shown_password: Your password is shown
+          hidden_password: La contrasenya està ocultada
+          hide_password: Oculta la contrasenya
+          show_password: Mostra la contrasenya
+          shown_password: La contrasenya és visible
