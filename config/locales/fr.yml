@@ -1,0 +1,6 @@
+---
+fr:
+  decidim:
+    components:
+      friendly_signup:
+        name: FriendlySignup
