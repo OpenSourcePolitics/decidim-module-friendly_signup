@@ -12,7 +12,8 @@ This module simply substitutes some pages to ease up the registration process in
 
 Features:
 
-- [ ] Simplify the password field and add a button with a "show password"
+- [x] Simplify the password field and add a button with a "show password". ![Show/hide password](examples/passwords.png)
+ 
 - [ ] Remove the nickname field from the registration process and automatically create one on registering
 - [ ] Instant validate parameters when registering without having to send it for backend validation
 - [ ] Use checkout codes to validate the email instead of a link
