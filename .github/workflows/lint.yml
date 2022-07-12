@@ -1,0 +1,42 @@
+name: "[CI] Lint"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  RUBY_VERSION: 2.7.6
+
+jobs:
+  lint-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: npm ci
+        name: Install JS deps
+
+      - run: bundle exec rubocop -P
+        name: Lint Ruby files
+
+      - run: npm run lint
+        name: Lint JS files
+
+      - run: npm run stylelint
+        name: Lint SCSS files
+
+      - run: bundle exec erblint app/**/*.erb
+        name: Lint ERB files
