@@ -5,7 +5,7 @@ $LOAD_PATH.push File.expand_path("lib", __dir__)
 require "decidim/friendly_signup/version"
 
 Gem::Specification.new do |s|
-  s.version = Decidim::FriendlySignup.version
+  s.version = Decidim::FriendlySignup::VERSION
   s.authors = ["Ivan Vergés"]
   s.email = ["ivan@pokecode.net"]
   s.license = "AGPL-3.0"
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
-  s.add_dependency "decidim-core", Decidim::FriendlySignup.version
+  s.add_dependency "decidim-core", Decidim::FriendlySignup::DECIDIM_VERSION
 end
