@@ -9,7 +9,7 @@ module Decidim
     include ActiveSupport::Configurable
 
     # Whether to override passwords boxes or not
-    config_accessor :passwords do
+    config_accessor :override_passwords do
       true
     end
   end

@@ -46,7 +46,7 @@ Customize your integration by creating an initializer (ie: `config/initializes/f
 
 Decidim::FriendlySignup.configure do |config|
   # Override password views or leave the originals (default is true):
-  config.passwords = false
+  config.override_passwords = false
 end
 
 ```

@@ -8,7 +8,7 @@ module Decidim
       extend ActiveSupport::Concern
 
       included do
-        helper_method :snippets
+        helper_method :snippets, :friendly_override_activated?
       end
 
       def snippets
@@ -21,6 +21,13 @@ module Decidim
         end
 
         @snippets
+      end
+
+      def friendly_override_activated?(type)
+        case type
+        when :override_passwords
+          Decidim::FriendlySignup.override_passwords.present?
+        end
       end
     end
   end
