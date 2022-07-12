@@ -73,8 +73,13 @@ describe "Admin invite", type: :system do
 
         fill_in :invitation_user_nickname, with: "caballo_loco"
         fill_in :invitation_user_password, with: "decidim123456"
-        fill_in :invitation_user_password_confirmation, with: "decidim123456"
         check :invitation_user_tos_agreement
+        find("*[type=submit]").click
+
+        expect(page).to have_content("doesn't match Password")
+
+        fill_in :invitation_user_password, with: "decidim123456"
+        fill_in :invitation_user_password_confirmation, with: "decidim123456"
         find("*[type=submit]").click
       end
 

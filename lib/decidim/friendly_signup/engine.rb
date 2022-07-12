@@ -15,6 +15,7 @@ module Decidim
       config.after_initialize do
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
+        Decidim::Devise::PasswordsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
       end
 
