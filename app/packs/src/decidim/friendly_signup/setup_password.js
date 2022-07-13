@@ -1,4 +1,4 @@
-import PasswordToggler from "src/decidim/friendly_signup/password_toggler";
+import PasswordToggler from "src/decidim/friendly_signup/lib/password_toggler";
 
 $(() => {
   window.Decidim = window.Decidim || {};

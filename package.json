@@ -1,6 +1,6 @@
 {
   "name": "decidim-module-friendly_signup",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A better signup process for Decidim",
   "main": "index.js",
   "directories": {

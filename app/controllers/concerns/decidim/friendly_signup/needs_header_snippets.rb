@@ -23,11 +23,8 @@ module Decidim
         @snippets
       end
 
-      def friendly_override_activated?(type)
-        case type
-        when :override_passwords
-          Decidim::FriendlySignup.override_passwords.present?
-        end
+      def friendly_override_activated?(feat)
+        Decidim::FriendlySignup.send(feat.to_s).present?
       end
     end
   end

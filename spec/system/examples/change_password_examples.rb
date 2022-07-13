@@ -1,16 +1,6 @@
 # frozen_string_literal: true
 
-require "spec_helper"
-
-describe "Registration", type: :system do
-  let(:organization) { create(:organization) }
-  let(:user) { create(:user, :confirmed, password: "DfyvHn425mYAy2HL", organization: organization) }
-
-  before do
-    switch_to_host(organization.host)
-    perform_enqueued_jobs { user.send_reset_password_instructions }
-  end
-
+shared_examples "on/off change passwords" do
   context "when override_passwords is active" do
     it "does not show password confirmation" do
       visit last_email_link
