@@ -50,14 +50,15 @@ export default class InstantValidator {
 
   validate($input) {
     this.tamper($input);
-    this.clearErrors($input);
     this.post($input).done((response) => {
       this.setFeedback(response, $input);
     });
   }
 
   setFeedback(data, $input) {
-    if (!data.valid) {
+    if (data.valid) {
+      this.clearErrors($input);
+    } else {
       this.addErrors(this.target($input), data.error);
     }
   }
