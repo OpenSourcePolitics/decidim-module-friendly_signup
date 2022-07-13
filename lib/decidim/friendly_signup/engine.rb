@@ -9,6 +9,10 @@ module Decidim
     class Engine < ::Rails::Engine
       isolate_namespace Decidim::FriendlySignup
 
+      routes do
+        post :validate, to: "validator#validate"
+      end
+
       # Prepare a zone to create overrides
       # https://edgeguides.rubyonrails.org/engines.html#overriding-models-and-controllers
       # overrides
