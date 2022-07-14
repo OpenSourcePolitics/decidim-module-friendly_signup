@@ -21,6 +21,7 @@ module Decidim
         Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::PasswordsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
+        Decidim::RegistrationForm.include(Decidim::FriendlySignup::AutoNickname)
       end
 
       initializer "FriendlySignup.webpacker.assets_path" do

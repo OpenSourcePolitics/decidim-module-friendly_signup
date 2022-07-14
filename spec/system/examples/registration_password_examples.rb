@@ -2,6 +2,7 @@
 
 shared_examples "on/off registration passwords" do
   before do
+    allow(Decidim::FriendlySignup).to receive(:hide_nickname).and_return(false)
     visit decidim.new_user_registration_path
   end
 
@@ -56,11 +57,12 @@ shared_examples "on/off registration passwords" do
         fill_in :registration_user_name, with: "Responsible Citizen"
         fill_in :registration_user_nickname, with: "responsible"
         fill_in :registration_user_password, with: "DfyvHn425mYAy2HL"
+        fill_in :registration_user_password_confirmation, with: "nonsense"
         check :registration_user_tos_agreement
         check :registration_user_newsletter
         find("*[type=submit]").click
 
-        expect(page).to have_content("There's an error in this field.")
+        expect(page).to have_content("doesn't match Password")
 
         fill_in :registration_user_password, with: "DfyvHn425mYAy2HL"
         fill_in :registration_user_password_confirmation, with: "DfyvHn425mYAy2HL"
