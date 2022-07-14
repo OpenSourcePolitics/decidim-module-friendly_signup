@@ -18,6 +18,11 @@ module Decidim
     config_accessor :use_instant_validation do
       true
     end
+
+    # Whether to hide nickname and generate it automatically
+    config_accessor :hide_nickname do
+      true
+    end
   end
 end
 

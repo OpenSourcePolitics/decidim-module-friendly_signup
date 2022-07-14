@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    decidim-friendly_signup (0.2)
+    decidim-friendly_signup (0.3)
       decidim-core (~> 0.26.0)
 
 GEM
