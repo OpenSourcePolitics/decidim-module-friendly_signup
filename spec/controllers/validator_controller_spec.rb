@@ -9,6 +9,7 @@ module Decidim::FriendlySignup
     let(:organization) { create(:organization) }
 
     before do
+      allow(Decidim::FriendlySignup).to receive(:hide_nickname).and_return(false)
       request.env["decidim.current_organization"] = organization
     end
 

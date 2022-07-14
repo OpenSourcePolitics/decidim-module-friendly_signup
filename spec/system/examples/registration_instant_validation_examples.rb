@@ -25,12 +25,12 @@ shared_examples "on/off registration instant validation" do
         expect(page).not_to have_content("Is invalid")
 
         fill_in "Your email", with: " bot@matrix"
-        sleep 0.3 # wait for the delayed triggering fetcher
+        sleep 0.3
 
         expect(page).to have_content("Is invalid")
 
         fill_in "Your email", with: "bot@matrix.org"
-        sleep 0.3 # wait for the delayed triggering fetcher
+        sleep 0.3
 
         expect(page).to have_content("Has already been taken")
       end
@@ -41,9 +41,9 @@ shared_examples "on/off registration instant validation" do
         expect(page).not_to have_content("Is invalid")
 
         fill_in "Nickname", with: "agentsmith"
-        sleep 0.3 # wait for the delayed triggering fetcher
+        sleep 0.3
 
-        expect(page).to have_content("Is invalid")
+        expect(page).to have_content("Has already been taken")
       end
     end
 

@@ -20,7 +20,10 @@ module Decidim
         def nickname_unique_in_organization
           return false unless nickname
 
-          errors.add :base, :taken if valid_users.find_by("LOWER(nickname)= ? AND decidim_organization_id = ?", nickname.downcase, current_organization.id).present?
+          if valid_users.find_by("LOWER(nickname)= ? AND decidim_organization_id = ?", nickname.downcase, current_organization.id).present?
+            errors.add :base, :taken
+            errors.add :nickname, :taken
+          end
         end
 
         def valid_users
