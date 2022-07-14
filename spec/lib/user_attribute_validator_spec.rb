@@ -23,10 +23,15 @@ module Decidim::FriendlySignup
     let(:group_value) { "africa" }
     let!(:organization) { create :organization }
 
+    before do
+      allow(Decidim::FriendlySignup).to receive(:hide_nickname).and_return(false)
+    end
+
     it "responds to form" do
       expect(subject.form).to eq(form)
     end
 
+    context ""
     it { is_expected.to be_valid }
 
     it "does not have errors" do

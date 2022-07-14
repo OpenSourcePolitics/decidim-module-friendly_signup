@@ -18,7 +18,7 @@ This module simply substitutes some pages to ease up the registration process in
 
 - [x] Simplify the password field and add a button with a "show password". ![Show/hide password](examples/passwords.png)
  
-- [ ] Remove the nickname field from the registration process and automatically create one on registering
+- [x] Remove the nickname field from the registration process and automatically create one on registering. ![Hide nickname](examples/nickname.png)
 - [x] Instant validate parameters when registering without having to send it for backend validation. ![Instant validation](examples/instant_validation.png)
 - [ ] Use checkout codes to validate the email instead of a link
 
@@ -51,6 +51,7 @@ Depending on your Decidim version, choose the corresponding FriendlySignup versi
 
 | FriendlySignup version | Compatible Decidim versions |
 |---|---|
+| 0.3.x | 0.26.x |
 | 0.2.x | 0.26.x |
 | 0.1.x | 0.26.x |
 
@@ -67,6 +68,9 @@ Decidim::FriendlySignup.configure do |config|
 
   # Automatically validate user inputs in the register form (default is true):
   config.use_instant_validation = false
+
+  # Hide nickname field and create one automatically from user's name or email (default is true)
+  config.hide_nickname = false
 end
 ```
 
