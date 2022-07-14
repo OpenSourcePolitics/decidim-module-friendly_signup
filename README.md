@@ -18,7 +18,7 @@ This module simply substitutes some pages to ease up the registration process in
 
 - [x] Simplify the password field and add a button with a "show password". ![Show/hide password](examples/passwords.png)
  
-- [x] Remove the nickname field from the registration process and automatically create one on registering
+- [x] Remove the nickname field from the registration process and automatically create one on registering. ![Hide nickname](examples/nickname.png)
 - [x] Instant validate parameters when registering without having to send it for backend validation. ![Instant validation](examples/instant_validation.png)
 - [ ] Use checkout codes to validate the email instead of a link
 
