@@ -23,6 +23,11 @@ module Decidim
     config_accessor :hide_nickname do
       true
     end
+
+    # Use confirmation codes instead of confirmation links
+    config_accessor :use_confirmation_codes do
+      true
+    end
   end
 end
 
