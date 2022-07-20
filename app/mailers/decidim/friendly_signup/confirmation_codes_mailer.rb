@@ -8,7 +8,7 @@ module Decidim
       def confirmation_instructions(user, token)
         @user = user
         @organization = user.organization
-        @token = token
+        @code = FriendlySignup.confirmation_code(token)
 
         with_user(user) do
           mail(to: "#{user.name} <#{user.email}>", subject: I18n.t("decidim.friendly_signup.confirmation_codes.mailer.subject", organization: @organization.name))

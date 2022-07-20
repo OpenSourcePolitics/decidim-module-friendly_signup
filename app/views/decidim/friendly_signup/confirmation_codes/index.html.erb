@@ -7,5 +7,24 @@
       <h1><%= t(".enter_code") %></h1>
     </div>
   </div>
-hi
+
+  <div class="row">
+    <div class="columns medium-7 large-5 medium-centered">
+      <div class="card">
+        <div class="card__content">
+          <%= decidim_form_for(@form) do |f| %>
+            <div class="field">
+              <%= f.text_field :code, autofocus: true, autocomplete: :off %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t("decidim.friendly_signup.confirmation_codes.validate"), class: "button expanded" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </div>

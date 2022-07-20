@@ -1,5 +1,9 @@
 ---
 en:
+  activemodel:
+    attributes:
+      confirmation_code:
+        code: Confirmation code
   decidim:
     friendly_signup:
       confirmation_codes:
@@ -7,6 +11,7 @@ en:
           enter_code: Enter code
         mailer:
           subject: Confirm your account at %{organization}
+        validate: Validate
       shared:
         password_fields:
           hidden_password: Your password is hidden

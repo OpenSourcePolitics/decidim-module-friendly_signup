@@ -28,6 +28,11 @@ module Decidim
     config_accessor :use_confirmation_codes do
       true
     end
+
+    # Generates a secure code from a string
+    def self.confirmation_code(hash)
+      Decidim::Tokenizer.new(salt: Rails.application.secret_key_base, length: 2).int_digest(hash)
+    end
   end
 end
 
