@@ -12,7 +12,7 @@
     <div class="columns medium-7 large-5 medium-centered">
       <div class="card">
         <div class="card__content">
-          <%= decidim_form_for(@form) do |f| %>
+          <%= decidim_form_for(confirmation_form, url: decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_form.confirmation_token), class: "novalidate") do |f| %>
             <div class="field">
               <%= f.text_field :code, autofocus: true, autocomplete: :off %>
             </div>

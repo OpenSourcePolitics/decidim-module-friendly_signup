@@ -6,9 +6,14 @@ en:
         code: Confirmation code
   decidim:
     friendly_signup:
+      confirmation_code_form:
+        invalid: Code is invalid, please make sure to copy the code emailed to you.
+        user_invalid: The user coudn't be found.
       confirmation_codes:
         index:
           enter_code: Enter code
+        create:
+          user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
         mailer:
           subject: Confirm your account at %{organization}
         validate: Validate
