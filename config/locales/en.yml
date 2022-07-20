@@ -2,9 +2,18 @@
 en:
   decidim:
     friendly_signup:
+      confirmation_codes:
+        index:
+          enter_code: Enter code
+        mailer:
+          subject: Confirm your account at %{organization}
       shared:
         password_fields:
           hidden_password: Your password is hidden
           hide_password: Hide password
           show_password: Show password
           shown_password: Your password is shown
+  devise:
+    registrations:
+      signed_up_but_code_required: A message with a code has been sent to your email
+        address. Please copy and paste the received code in this page.

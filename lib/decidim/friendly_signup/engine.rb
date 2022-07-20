@@ -10,6 +10,9 @@ module Decidim
       isolate_namespace Decidim::FriendlySignup
 
       routes do
+        devise_scope :user do
+          resources :confirmation_codes, only: [:index, :create]
+        end
         post :validate, to: "validator#validate"
       end
 
@@ -18,10 +21,12 @@ module Decidim
       # overrides
       config.after_initialize do
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
+        Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
         Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::PasswordsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::RegistrationForm.include(Decidim::FriendlySignup::AutoNickname)
+        Decidim::User.include(Decidim::FriendlySignup::NeedsRegistrationCodes)
       end
 
       initializer "FriendlySignup.webpacker.assets_path" do
