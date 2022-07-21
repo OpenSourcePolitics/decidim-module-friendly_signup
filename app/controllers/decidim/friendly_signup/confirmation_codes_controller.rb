@@ -8,13 +8,13 @@ module Decidim
 
       before_action do
         unless user.present? && !user.confirmed?
-          flash[:alert] = I18n.t("confirmation_code_form.user_invalid", scope: "decidim.friendly_signup")
+          flash[:alert] = I18n.t("confirmation_code_form.invalid_token", scope: "decidim.friendly_signup")
 
           redirect_to decidim.new_user_session_path
         end
       end
 
-      helper_method :confirmation_form
+      helper_method :user, :confirmation_form
 
       def index; end
 
@@ -27,6 +27,13 @@ module Decidim
 
         flash.now[:alert] = confirmation_form.errors.messages.values.flatten.join(" ")
         render :index
+      end
+
+      def resend_code
+        # resend confirmation code (this Devise method is overriden)
+        user.send_on_create_confirmation_instructions
+        flash[:success] = I18n.t("confirmation_codes.resend_code.sent", email: user.email, scope: "decidim.friendly_signup")
+        redirect_to confirmation_codes_path(confirmation_token: params[:confirmation_token])
       end
 
       private

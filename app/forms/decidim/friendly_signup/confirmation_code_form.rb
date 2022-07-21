@@ -26,7 +26,7 @@ module Decidim
       def user_exists
         return if User.exists?(confirmation_token: confirmation_token, organization: current_organization)
 
-        errors.add(:code, I18n.t("confirmation_code_form.user_invalid", scope: "decidim.friendly_signup"))
+        errors.add(:code, I18n.t("confirmation_code_form.invalid_token", scope: "decidim.friendly_signup"))
       end
     end
   end

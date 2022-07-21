@@ -11,7 +11,9 @@ module Decidim
 
       routes do
         devise_scope :user do
-          resources :confirmation_codes, only: [:index, :create]
+          resources :confirmation_codes, only: [:index, :create] do
+            post "resend_code", on: :collection
+          end
         end
         post :validate, to: "validator#validate"
       end
@@ -19,7 +21,7 @@ module Decidim
       # Prepare a zone to create overrides
       # https://edgeguides.rubyonrails.org/engines.html#overriding-models-and-controllers
       # overrides
-      config.after_initialize do
+      config.to_prepare do
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
         Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
