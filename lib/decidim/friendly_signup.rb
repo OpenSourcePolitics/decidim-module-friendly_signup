@@ -31,7 +31,9 @@ module Decidim
 
     # Generates a secure code from a string
     def self.confirmation_code(hash)
-      Decidim::Tokenizer.new(salt: Rails.application.secret_key_base, length: 2).int_digest(hash)
+      num = Decidim::Tokenizer.new(salt: Rails.application.secret_key_base).int_digest(hash).to_s[0..3]
+      num += "0" while num.size < 4
+      num.to_i
     end
   end
 end

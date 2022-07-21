@@ -10,13 +10,18 @@ en:
         invalid: Code is invalid, please make sure to copy the code emailed to you.
         user_invalid: The user coudn't be found.
       confirmation_codes:
-        index:
-          enter_code: Enter code
         create:
           user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
+        index:
+          description: You should receive a 4 digit code at %{email}.<br>If you can't
+            find it, please check your spam folder or wait  up to 10 minutes.
+          enter_code: Enter code
+          subtitle: You need to confirm your email address to be able to submit proposals,
+            comment and vote.
+          title: One last step...
+          verify: Verify
         mailer:
           subject: Confirm your account at %{organization}
-        validate: Validate
       shared:
         password_fields:
           hidden_password: Your password is hidden

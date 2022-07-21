@@ -4,6 +4,7 @@ module Decidim
   module FriendlySignup
     class ConfirmationCodesController < Decidim::Devise::ConfirmationsController
       include Decidim::FormFactory
+      include NeedsHeaderSnippets
 
       before_action do
         unless user.present? && !user.confirmed?

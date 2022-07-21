@@ -12,14 +12,20 @@ module Decidim::FriendlySignup
       )
     end
 
+    def generate_code(string)
+      ::Decidim::FriendlySignup.confirmation_code(string)
+    end
+
     let(:organization) { create(:organization) }
     let!(:user) { create(:user, organization: organization) }
-    let(:code) { Decidim::Tokenizer.new(salt: Rails.application.secret_key_base, length: 2).int_digest(confirmation_token) }
+    let(:code) { generate_code(confirmation_token) }
+    let(:confirmation_numbers) { [1, 2, 3, 4] }
     let(:confirmation_token) { user.confirmation_token }
 
     let(:attributes) do
       {
         code: code,
+        confirmation_numbers: confirmation_numbers,
         confirmation_token: confirmation_token
       }
     end
@@ -36,6 +42,10 @@ module Decidim::FriendlySignup
         expect(subject.errors[:code]).to be_empty
       end
 
+      it "confirmation_numbers array is ignored" do
+        expect(subject.user_code).to eq(code)
+      end
+
       context "and code is invalid" do
         let(:code) { "1234" }
 
@@ -50,6 +60,12 @@ module Decidim::FriendlySignup
       let(:code) { nil }
 
       it { is_expected.to be_invalid }
+
+      context "and confirmation_numbers are correct" do
+        let(:confirmation_numbers) { generate_code(confirmation_token).to_s.split("") }
+
+        it { is_expected.to be_valid }
+      end
     end
 
     context "when confirmation_token is empty" do
