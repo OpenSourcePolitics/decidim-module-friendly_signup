@@ -20,7 +20,7 @@ module Decidim
       # Prepare a zone to create overrides
       # https://edgeguides.rubyonrails.org/engines.html#overriding-models-and-controllers
       # overrides
-      config.to_prepare do
+      config.after_initialize do
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
         Decidim::Devise::ConfirmationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
