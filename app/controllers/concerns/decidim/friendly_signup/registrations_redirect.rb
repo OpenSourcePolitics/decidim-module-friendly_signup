@@ -26,7 +26,7 @@ module Decidim
 
       def codes_confirmation_path(user)
         return if Decidim::FriendlySignup.use_confirmation_codes.blank?
-        return unless user
+        return if user.blank?
         return unless user.inactive_message.to_s == "unconfirmed"
 
         set_flash_message! :notice, :signed_up_but_code_required
