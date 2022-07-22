@@ -23,6 +23,18 @@ module Decidim
     config_accessor :hide_nickname do
       true
     end
+
+    # Use confirmation codes instead of confirmation links
+    config_accessor :use_confirmation_codes do
+      true
+    end
+
+    # Generates a secure code from a string
+    def self.confirmation_code(hash)
+      num = Decidim::Tokenizer.new(salt: Rails.application.secret_key_base).int_digest(hash).to_s[0..3]
+      num += "0" while num.size < 4
+      num.to_i
+    end
   end
 end
 

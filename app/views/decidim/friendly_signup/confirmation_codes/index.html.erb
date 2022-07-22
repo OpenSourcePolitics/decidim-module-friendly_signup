@@ -1,0 +1,38 @@
+<% add_decidim_page_title(t(".enter_code")) %>
+
+<div class="wrapper">
+<div class="row collapse">
+  <div class="row collapse">
+    <div class="columns large-8 large-centered text-center page-title">
+      <h1><%= t(".title") %></h1>
+      <h6><%= t(".subtitle") %></h6>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="columns medium-10 large-8 medium-centered">
+      <div class="card">
+        <div class="card__content">
+          <p class="text-center"><%= t(".description", email: "<strong>#{user.email}</strong>").html_safe %></p>
+          <%= decidim_form_for(confirmation_form, url: decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_form.confirmation_token)) do |f| %>
+            <div class="field confirmation-code-inputs">
+              <%= number_field_tag "confirmation_numbers[0]", "", autofocus: true, autocomplete: :off %>
+              <%= number_field_tag "confirmation_numbers[1]", "", autocomplete: :off %>
+              <%= number_field_tag "confirmation_numbers[2]", "", autocomplete: :off %>
+              <%= number_field_tag "confirmation_numbers[3]", "", autocomplete: :off %>
+            </div>
+
+            <div class="actions text-center">
+              <%= f.submit t(".verify"), class: "button text-uppercase" %>
+            </div>
+          <% end %>
+
+          <p class="text-center">
+            <%= link_to t(".code_not_received"), decidim.user_confirmation_path(confirmation_token: confirmation_form.confirmation_token, "user[email]": user.email), method: :post, data: { confirm: t(".confirm_send_code", email: user.email) } %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
