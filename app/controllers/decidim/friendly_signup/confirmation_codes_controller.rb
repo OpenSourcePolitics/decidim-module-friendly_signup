@@ -6,14 +6,7 @@ module Decidim
       include Decidim::FormFactory
       include NeedsHeaderSnippets
 
-      before_action do
-        unless user.present? && !user.confirmed?
-          flash[:alert] = I18n.t("confirmation_code_form.invalid_token", scope: "decidim.friendly_signup")
-
-          redirect_to decidim.new_user_session_path
-        end
-      end
-
+      before_action :require_unconfirmed_user
       helper_method :user, :confirmation_form
 
       def index; end
@@ -37,6 +30,20 @@ module Decidim
 
       def user
         @user ||= User.find_by(confirmation_token: params[:confirmation_token], organization: current_organization)
+      end
+
+      def require_unconfirmed_user
+        return redirect_to decidim.user_confirmation_path unless FriendlySignup.use_confirmation_codes
+
+        unless user.present? && !user.confirmed?
+          flash[:alert] = I18n.t("confirmation_code_form.invalid_token", scope: "decidim.friendly_signup")
+          return redirect_to decidim.new_user_session_path
+        end
+
+        if user.send(:confirmation_period_expired?)
+          flash[:alert] = I18n.t("confirmation_code_form.expired", scope: "decidim.friendly_signup")
+          redirect_to decidim.user_confirmation_path
+        end
       end
     end
   end

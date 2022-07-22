@@ -7,6 +7,7 @@ en:
   decidim:
     friendly_signup:
       confirmation_code_form:
+        expired: Sorry, this code has expired, please generate a new one.
         invalid: Code is invalid, please make sure to copy the code emailed to you.
         invalid_token: Invalid token.
       confirmation_codes:

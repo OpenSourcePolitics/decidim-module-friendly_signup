@@ -31,7 +31,7 @@ module Decidim
         Decidim::User.include(Decidim::FriendlySignup::NeedsRegistrationCodes)
       end
 
-      initializer "FriendlySignup.confirmation_throttling" do |_app|
+      initializer "friendly_signup.confirmation_throttling" do
         # Throttle confirmation attempts for a given code parameter to 6 reqs/minute
         # Return the confirmation_token as a discriminator on POST /users/sign_in requests
         Rack::Attack.throttle("limit confirmations attempts per code", limit: 5, period: 60.seconds) do |request|
@@ -39,7 +39,7 @@ module Decidim
         end
       end
 
-      initializer "FriendlySignup.webpacker.assets_path" do
+      initializer "friendly_signup.webpacker.assets_path" do
         Decidim.register_assets_path File.expand_path("app/packs", root)
       end
     end
