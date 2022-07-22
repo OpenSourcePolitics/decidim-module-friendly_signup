@@ -27,6 +27,52 @@ en:
           subject: Confirm your account at %{organization}
         resend_code:
           sent: The confirmation code has been sent to %{email}.
+      confirmation_codes_mailer:
+        confirmation_instructions:
+          copy: 'Copy this code:'
+          expires_in: It will expire in %{time}.
+          ignore: |-
+            If you didn't request this comunication, please ignore this email.<br />
+            Your account won't be active until your account is fully confirmed.
+          subtitle: To finalize the registration you just need to copy the 4 digit
+            code below, go back to the %{organization} signup page and paste it!
+          title: You're almost there!
+      datetime:
+        distance_in_words:
+          about_x_hours:
+            one: about 1 hour
+            other: about %{count} hours
+          about_x_months:
+            one: about 1 month
+            other: about %{count} months
+          about_x_years:
+            one: about 1 year
+            other: about %{count} years
+          almost_x_years:
+            one: almost 1 year
+            other: almost %{count} years
+          half_a_minute: half a minute
+          less_than_x_minutes:
+            one: less than a minute
+            other: less than %{count} minutes
+          less_than_x_seconds:
+            one: less than 1 second
+            other: less than %{count} seconds
+          over_x_years:
+            one: over 1 year
+            other: over %{count} years
+          x_days:
+            one: 1 day
+            other: "%{count} days"
+          x_minutes:
+            one: 1 minute
+            other: "%{count} minutes"
+          x_months:
+            one: 1 month
+            other: "%{count} months"
+          x_seconds:
+            one: 1 second
+            other: "%{count} seconds"
       shared:
         password_fields:
           hidden_password: Your password is hidden
@@ -34,6 +80,9 @@ en:
           show_password: Show password
           shown_password: Your password is shown
   devise:
+    confirmations:
+      signed_up_but_code_required: A message with a code has been sent to your email
+        address. Please copy and paste the received code in this page.
     registrations:
       signed_up_but_code_required: A message with a code has been sent to your email
         address. Please copy and paste the received code in this page.

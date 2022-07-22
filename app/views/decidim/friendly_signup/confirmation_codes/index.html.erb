@@ -28,7 +28,7 @@
           <% end %>
 
           <p class="text-center">
-            <%= link_to t(".code_not_received"), resend_code_confirmation_codes_path(confirmation_token: confirmation_form.confirmation_token), method: :post, data: { confirm: t(".confirm_send_code", email: user.email) } %>
+            <%= link_to t(".code_not_received"), decidim.user_confirmation_path(confirmation_token: confirmation_form.confirmation_token, "user[email]": user.email), method: :post, data: { confirm: t(".confirm_send_code", email: user.email) } %>
           </p>
         </div>
       </div>

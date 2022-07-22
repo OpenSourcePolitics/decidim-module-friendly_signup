@@ -11,9 +11,7 @@ module Decidim
 
       routes do
         devise_scope :user do
-          resources :confirmation_codes, only: [:index, :create] do
-            post "resend_code", on: :collection
-          end
+          resources :confirmation_codes, only: [:index, :create]
         end
         post :validate, to: "validator#validate"
       end
@@ -24,6 +22,7 @@ module Decidim
       config.to_prepare do
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
+        Decidim::Devise::ConfirmationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
         Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::PasswordsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)

@@ -1,1 +1,13 @@
-Hi <%= @user.name %> your code is <%= @code %>
+<h1 class="text-center"><%= t(".title") %></h1>
+
+<p class="email-instructions text-center"><%= t(".subtitle", organization: link_to(@organization.name, decidim_friendly_signup.confirmation_codes_path(confirmation_token: @token))).html_safe %></p>
+
+<h3 class="email-instruction text-center" style="margin:1em 0 0.2em 0;"><%= t(".copy") %></h3>
+
+<% if @expires_at %>
+  <p class="email-small text-center"><%= t(".expires_in", time: distance_of_time_in_words(Time.now, @expires_at, scope: "decidim.friendly_signup.datetime.distance_in_words")) %></p>
+<% end %>
+
+<p class="stat text-center" style="margin:1em 0;"><b style="font-size: 2em"><%= @code %></b></p>
+
+<p class="email-small email-closing text-center"><%= t(".ignore").html_safe %></p>

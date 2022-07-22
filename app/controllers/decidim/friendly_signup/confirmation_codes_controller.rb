@@ -29,13 +29,6 @@ module Decidim
         render :index
       end
 
-      def resend_code
-        # resend confirmation code (this Devise method is overriden)
-        user.send_on_create_confirmation_instructions
-        flash[:success] = I18n.t("confirmation_codes.resend_code.sent", email: user.email, scope: "decidim.friendly_signup")
-        redirect_to confirmation_codes_path(confirmation_token: params[:confirmation_token])
-      end
-
       private
 
       def confirmation_form
