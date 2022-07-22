@@ -20,7 +20,7 @@ This module simply substitutes some pages to ease up the registration process in
  
 - [x] Remove the nickname field from the registration process and automatically create one on registering. ![Hide nickname](examples/nickname.png)
 - [x] Instant validate parameters when registering without having to send it for backend validation. ![Instant validation](examples/instant_validation.png)
-- [ ] Use checkout codes to validate the email instead of a link
+- [x] Use checkout codes to validate the email instead of a link
 
 ## Installation
 
@@ -42,6 +42,18 @@ And then execute:
 bundle
 ```
 
+For security reasons, it is also recomended to set a expiration time on confirmation tokens, to do that, make sure your Devise initializer has the variable `confirm_within` to certain amount of time.
+
+For instance, you can do that by creating an initializer such as:
+
+```ruby
+# config/initializers/devise.rb
+
+Devise.setup do |config|
+  config.confirm_within = 12.hours
+end
+```
+
 **Note:**
 
 The correct version of FriendlySignup should resolved automatically by the Bundler.
@@ -51,6 +63,7 @@ Depending on your Decidim version, choose the corresponding FriendlySignup versi
 
 | FriendlySignup version | Compatible Decidim versions |
 |---|---|
+| 0.4.x | 0.26.x |
 | 0.3.x | 0.26.x |
 | 0.2.x | 0.26.x |
 | 0.1.x | 0.26.x |

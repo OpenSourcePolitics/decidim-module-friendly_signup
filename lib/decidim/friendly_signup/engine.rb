@@ -2,6 +2,7 @@
 
 require "rails"
 require "decidim/core"
+require "rack/attack"
 
 module Decidim
   module FriendlySignup
@@ -28,6 +29,14 @@ module Decidim
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::RegistrationForm.include(Decidim::FriendlySignup::AutoNickname)
         Decidim::User.include(Decidim::FriendlySignup::NeedsRegistrationCodes)
+      end
+
+      initializer "FriendlySignup.confirmation_throttling" do |_app|
+        # Throttle confirmation attempts for a given code parameter to 6 reqs/minute
+        # Return the confirmation_token as a discriminator on POST /users/sign_in requests
+        Rack::Attack.throttle("limit confirmations attempts per code", limit: 5, period: 60.seconds) do |request|
+          request.params["confirmation_token"] if request.path == "/friendly_signup/confirmation_codes" && request.post?
+        end
       end
 
       initializer "FriendlySignup.webpacker.assets_path" do
