@@ -20,7 +20,7 @@ This module simply substitutes some pages to ease up the registration process in
  
 - [x] Remove the nickname field from the registration process and automatically create one on registering. ![Hide nickname](examples/nickname.png)
 - [x] Instant validate parameters when registering without having to send it for backend validation. ![Instant validation](examples/instant_validation.png)
-- [x] Use checkout codes to validate the email instead of a link
+- [x] Use numeric, confirmation codes to validate the email instead of a link. ![Confirmation codes](examples/confirmation_codes.png)
 
 ## Installation
 
@@ -84,6 +84,9 @@ Decidim::FriendlySignup.configure do |config|
 
   # Hide nickname field and create one automatically from user's name or email (default is true)
   config.hide_nickname = false
+
+  # Send the users a 4-digit number that needs to be entered in a confirmation page instead of a confirmation link (default is true)
+  config.use_confirmation_codes = false
 end
 ```
 
