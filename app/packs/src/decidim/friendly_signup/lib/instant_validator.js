@@ -15,7 +15,7 @@ export default class InstantValidator {
   }
 
   init() {
-    if (!this.$form) {
+    if (!this.url || !this.$form.length) {
       return;
     }
     this.$form.foundation("disableValidation");

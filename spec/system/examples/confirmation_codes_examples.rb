@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
 shared_examples "on/off confirmation codes" do
-  let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
-
   context "when confirmation codes is active" do
     before do
-      allow(Rails).to receive(:cache).and_return(memory_store)
       visit decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token)
     end
 
@@ -34,18 +31,6 @@ shared_examples "on/off confirmation codes" do
         end
 
         expect(user.reload).not_to be_confirmed
-      end
-
-      context "when post request gets attacked" do
-        before do
-          6.times do
-            fill_confirmation_code(code)
-          end
-        end
-
-        it "throttles after 5 attempts per minute" do
-          expect(page).to have_content("Retry later")
-        end
       end
     end
 

@@ -35,6 +35,7 @@ describe "Registration", type: :system do
   let(:code) { code_for(confirmation_token) }
 
   before do
+    allow(::Decidim::User).to receive(:confirm_within).and_return(10.minutes)
     switch_to_host(organization.host)
   end
 
@@ -44,7 +45,6 @@ describe "Registration", type: :system do
 
   context "when token has expired" do
     before do
-      allow(::Decidim::User).to receive(:confirm_within).and_return(10.minutes)
       # rubocop:disable Rails/SkipsModelValidations:
       user.update_column(:confirmation_sent_at, 11.minutes.ago)
       # rubocop:enable Rails/SkipsModelValidations:
@@ -67,6 +67,25 @@ describe "Registration", type: :system do
       fill_confirmation_code(last_email_code)
 
       expect(user.reload).to be_confirmed
+    end
+  end
+
+  context "when post request gets attacked" do
+    let(:code) { 1234 }
+    let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
+
+    before do
+      allow(Rails).to receive(:cache).and_return(memory_store)
+      visit decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token)
+
+      6.times do
+        fill_confirmation_code(code)
+        sleep 0.1
+      end
+    end
+
+    it "throttles after 5 attempts per minute" do
+      expect(page).to have_content("Retry later")
     end
   end
 end
