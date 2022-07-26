@@ -6,6 +6,13 @@ en:
         code: Confirmation code
   decidim:
     friendly_signup:
+      errors:
+        messages:
+          blank: Looks like you haven’t entered anything in this field.
+          taken: This email is already in use for another account. Try signing in or use another email
+          email:
+            invalid: The email address looks incomplete
+          too_short: The password you have entered is too short
       confirmation_code_form:
         expired: Sorry, this code has expired, please generate a new one.
         invalid: Code is invalid, please make sure to copy the code emailed to you.

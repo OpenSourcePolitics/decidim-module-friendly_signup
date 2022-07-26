@@ -28,7 +28,17 @@ module Decidim
       end
 
       def error
-        errors.flatten.map(&:upcase_first).join(". ") unless valid?
+        return if valid?
+
+        errors.map do |msg|
+          key = [:blank, :invalid, :taken].find { |err| msg == I18n.t(err, scope: "errors.messages") }
+          custom_error(key).presence || msg.upcase_first
+        end.join(". ")
+      end
+
+      def custom_error(key)
+        generic = I18n.t(key, scope: "decidim.friendly_signup.errors.messages", default: "")
+        I18n.t("#{attribute}.#{key}", scope: "decidim.friendly_signup.errors.messages", default: generic)
       end
 
       private
