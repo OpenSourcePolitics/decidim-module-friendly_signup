@@ -3,87 +3,87 @@ es:
   activemodel:
     attributes:
       confirmation_code:
-        code: Confirmation code
+        code: Código de confirmación
   decidim:
     friendly_signup:
       confirmation_code_form:
-        expired: Sorry, this code has expired, please generate a new one.
-        invalid: Code is invalid, please make sure to copy the code emailed to you.
-        invalid_token: Invalid token.
+        expired: Este código ha expirado, por favor genera uno nuevo.
+        invalid: Código inválido, asegúrate de copiar el último código enviado por email.
+        invalid_token: Token inválido.
       confirmation_codes:
         create:
-          user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
+          user_confirmed: Bienvenida %{name}! Tu cuenta ha sido confirmada correctamente!
         index:
-          code_not_received: Didn't receive the code?
-          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
-          description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
-          enter_code: Enter code
-          subtitle: You need to confirm your email address to be able to submit proposals, comment and vote.
-          title: One last step...
-          verify: Verify
+          code_not_received: '¿No has recibido el código?'
+          confirm_send_code: '¡Quieres reenviar el código de confirmación a %{email}<br>Asegurate de comprobar la carpeta de spam por si acaso!'
+          description: Deberías recibir un código de 4 cifras a %{email}.<br>Si no lo encuentras, comprueba las carpetas de spam o espera unos minutos.
+          enter_code: Introducir código
+          subtitle: Debes confirmar tu dirección de correo electrónico antes de poder enviar propuestas, comentar o votar.
+          title: Solo un último paso...
+          verify: Verificar
         mailer:
-          subject: Confirm your account at %{organization}
+          subject: Confirmar tu cuenta en %{organization}
         resend_code:
-          sent: The confirmation code has been sent to %{email}.
+          sent: Se ha enviado un correo de confirmación a %{email}.
       confirmation_codes_mailer:
         confirmation_instructions:
-          copy: 'Copy this code:'
-          expires_in: It will expire in %{time}.
+          copy: 'Copia este código:'
+          expires_in: Expirará en %{time}.
           ignore: |-
-            If you didn't request this comunication, please ignore this email.<br />
-            Your account won't be active until your account is fully confirmed.
-          subtitle: To finalize the registration you just need to copy the 4 digit code below, go back to the %{organization} signup page and paste it!
-          title: You're almost there!
+            Si no has generado este mensaje, por favor ignora este email.<br />
+            Tu cuenta no se activará a menos que este confirmada.
+          subtitle: Para finalizar el registro solo debes copiar el código de 4 dígitos mostrado a continuación, luego vuelve a la página de registro de %{organization} y engánchalo ahí!
+          title: '¡Ya casi está!'
       datetime:
         distance_in_words:
           about_x_hours:
-            one: about 1 hour
-            other: about %{count} hours
+            one: alrededor de 1 hora
+            other: alrededor de %{count} horas
           about_x_months:
-            one: about 1 month
-            other: about %{count} months
+            one: alrededor de 1 mes
+            other: alrededor de %{count} meses
           about_x_years:
-            one: about 1 year
-            other: about %{count} years
+            one: alrededor de 1 año
+            other: alrededor de %{count} años
           almost_x_years:
-            one: almost 1 year
-            other: almost %{count} years
-          half_a_minute: half a minute
+            one: casi 1 año
+            other: casi %{count} años
+          half_a_minute: medio minuto
           less_than_x_minutes:
-            one: less than a minute
-            other: less than %{count} minutes
+            one: menos de 1 minuto
+            other: menos de %{count} minutos
           less_than_x_seconds:
-            one: less than 1 second
-            other: less than %{count} seconds
+            one: menos de 1 segundo
+            other: menos de %{count} segundos
           over_x_years:
-            one: over 1 year
-            other: over %{count} years
+            one: más de 1 año
+            other: más de %{count} años
           x_days:
-            one: 1 day
-            other: "%{count} days"
+            one: 1 día
+            other: "%{count} días"
           x_minutes:
-            one: 1 minute
-            other: "%{count} minutes"
+            one: 1 minuto
+            other: "%{count} minutos"
           x_months:
-            one: 1 month
-            other: "%{count} months"
+            one: 1 mes
+            other: "%{count} meses"
           x_seconds:
-            one: 1 second
-            other: "%{count} seconds"
+            one: 1 segundo
+            other: "%{count} segundos"
       errors:
         messages:
-          blank: Looks like you haven’t entered anything in this field
+          blank: Parece que no has introducido nada en este campo
           email:
-            blank: Please enter an email address
-            invalid: The email address looks incomplete
-            taken: This email is already in use for another account. Try signing in or use another email
+            blank: Introduzca una dirección de correo electrónico
+            invalid: La dirección de correo electrónico parece incompleta
+            taken: Este correo electrónico ya está en uso para otra cuenta. Intenta iniciar sesión o utiliza otro correo electrónico
           password:
-            email_included_in_password: The password you have entered is too similar to your email
-            name_included_in_password: The password you have entered is too similar to your name
-            nickname_included_in_password: The password you have entered is too similar to your nickname
-            not_enough_unique_characters: The password you have entered does not have enough different characters
-            password_too_common: The password you have entered is very common - we suggest using a different password
-            password_too_short: The password you have entered is too short
+            email_included_in_password: La contraseña que has introducido es demasiado similar a tu correo electrónico
+            name_included_in_password: La contraseña que has introducido es demasiado similar a tu nombre
+            nickname_included_in_password: La contraseña que has introducido es demasiado similar a tu apodo
+            not_enough_unique_characters: La contraseña que ha introducido no tiene suficientes caracteres diferentes
+            password_too_common: La contraseña que has introducido es muy común - te sugerimos usar una contraseña diferente
+            password_too_short: La contraseña introducida es demasiado corta
       shared:
         password_fields:
           hidden_password: La contraseña está oculta
@@ -92,6 +92,6 @@ es:
           shown_password: La contraseña es visible
   devise:
     confirmations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: Un mensaje con un código ha sido enviado a su dirección de correo electrónico. Por favor, copie y pegue el código recibido en esta página.
     registrations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: Un mensaje con un código ha sido enviado a su dirección de correo electrónico. Por favor, copie y pegue el código recibido en esta página.
