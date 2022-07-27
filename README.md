@@ -90,6 +90,41 @@ Decidim::FriendlySignup.configure do |config|
 end
 ```
 
+### Customize error messages in instant validation
+
+You can customize any message either overriding in your application the files in `config/locales/*.yml` or by using a module like Term Customizer.
+
+This plugin uses a cascade-style fallback looking for a series of I18n keys and returns the first available. For instance, for the attribute `email` and the validation key `blank` it will look for these 3 possibilities, returning the first matching one:
+
+Specific attribute error:
+```yaml
+en:
+  decidim:
+    friendly_signup:
+      errors:
+        messages:
+          email:
+            blank: Please enter an email address
+```
+
+Generic error:
+```yaml
+en:
+  decidim:
+    friendly_signup:
+      errors:
+        messages:
+          blank: Looks like you haven’t entered anything in this field
+```
+
+Rails' default error:
+```yaml
+en:
+  errors:
+    messages:
+      blank: can't be blank
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/OpenSourcePolitics/decidim-module-friendly_signup.

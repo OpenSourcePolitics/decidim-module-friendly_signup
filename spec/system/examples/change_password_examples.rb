@@ -72,7 +72,7 @@ shared_examples "on/off change passwords" do
       visit last_email_link
 
       within ".new_user" do
-        fill_in :password_user_password, with: ""
+        fill_in :password_user_password, with: "short"
         sleep 0.3
 
         expect(page).to have_css(".form-error")

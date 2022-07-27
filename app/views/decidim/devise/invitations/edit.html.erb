@@ -10,7 +10,7 @@
 
   <div class="row">
     <div class="columns large-6 medium-10 medium-centered">
-      <%= decidim_form_for resource, namespace: "invitation", as: resource_name, url: invitation_path(resource_name, invite_redirect: params[:invite_redirect]), html: { method: :put, class: "register-form new_user" } do |f| %>
+      <%= decidim_form_for(resource, namespace: "invitation", as: resource_name, url: invitation_path(resource_name, invite_redirect: params[:invite_redirect]), html: { method: :put, class: "register-form new_user#{friendly_override_activated?(:use_instant_validation) ? ' instant-validation' : ''}" } , data: { "validation-url" => decidim_friendly_signup.validate_path }) do |f| %>
         <div class="card">
           <div class="card__content">
             <legend><%= t("sign_up_as.legend", scope: "decidim.devise.registrations.new") %></legend>
@@ -19,14 +19,16 @@
 
             <%= f.hidden_field :invitation_token %>
 
-            <div class="user-nickname">
-              <div class="field">
-                <%= f.text_field :nickname, help_text: t("devise.invitations.edit.nickname_help", organization: current_organization.name), required: "required", prefix: { value: "@", small: 1, large: 1 } %>
+            <% unless friendly_override_activated?(:hide_nickname) %>
+              <div class="user-nickname">
+                <div class="field">
+                  <%= f.text_field :nickname, help_text: t("devise.invitations.edit.nickname_help", organization: current_organization.name), required: "required", prefix: { value: "@", small: 1, large: 1 }, data: { "instant-attribute" => "nickname", "instant-recheck" => "password" } %>
+                </div>
               </div>
-            </div>
+            <% end %>
 
             <% if f.object.class.require_password_on_accepting %>
-              <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { required: "required", minlength: ::PasswordValidator::MINIMUM_LENGTH, maxlength: ::PasswordValidator::MAX_LENGTH }) %>
+              <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { required: true, autocomplete: "off", help_text: t("devise.passwords.edit.password_help", minimun_characters: ::PasswordValidator::MINIMUM_LENGTH), minlength: ::PasswordValidator::MINIMUM_LENGTH, maxlength: ::PasswordValidator::MAX_LENGTH, data: { "instant-attribute" => "password" } }) %>
             <% end %>
           </div>
         </div>
