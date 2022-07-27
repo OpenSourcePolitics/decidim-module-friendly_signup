@@ -3,54 +3,54 @@ ca:
   activemodel:
     attributes:
       confirmation_code:
-        code: Confirmation code
+        code: Codi de confirmació
   decidim:
     friendly_signup:
       confirmation_code_form:
-        expired: Sorry, this code has expired, please generate a new one.
-        invalid: Code is invalid, please make sure to copy the code emailed to you.
-        invalid_token: Invalid token.
+        expired: Aquest codi ha caducat, si us plau, genera un nou codi.
+        invalid: Aquest codi és invàlida. Si us plau, assegurat que has introduit correctament el codi que hem enviat.
+        invalid_token: Permis invàlid.
       confirmation_codes:
         create:
-          user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
+          user_confirmed: Hola %{name}! La teva compte ha estat confirmada amb èxit!
         index:
-          code_not_received: Didn't receive the code?
-          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
-          description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
-          enter_code: Enter code
-          subtitle: You need to confirm your email address to be able to submit proposals, comment and vote.
-          title: One last step...
-          verify: Verify
+          code_not_received: No has rebut el codi?
+          confirm_send_code: Vols renviar el codi de confirmació a %{email}?<br>Revisar que no estigui a la carpeta de spam per si de cas!
+          description: Rebràs un codi de 4 números at %{email}.<br>Si no  el pots trobar, revisa la carpeta de spam o espera fins a 10 minuts.
+          enter_code: Entra el codi
+          subtitle: Necessites confirmar el correu electrònic abans de poder publicar propostes, comentar i votar.
+          title: L'últim pas...
+          verify: Verifica
         mailer:
-          subject: Confirm your account at %{organization}
+          subject: Confirma la teva compte a %{organization}
         resend_code:
-          sent: The confirmation code has been sent to %{email}.
+          sent: El codi de confirmació s'ha enviat a %{email}.
       confirmation_codes_mailer:
         confirmation_instructions:
-          copy: 'Copy this code:'
-          expires_in: It will expire in %{time}.
+          copy: 'Copia aquest codi:'
+          expires_in: El codi caducarà el %{time}.
           ignore: |-
-            If you didn't request this comunication, please ignore this email.<br />
-            Your account won't be active until your account is fully confirmed.
-          subtitle: To finalize the registration you just need to copy the 4 digit code below, go back to the %{organization} signup page and paste it!
-          title: You're almost there!
+            Si no has demanat aquesta comunicació, si us plau, ignora aquest email. <br />
+            La teva compte no estarà activa fins que estigui confirmada.
+          subtitle: Per finalitzar el registre només necessites copiar aquest codi de 4 dígits, tornar a la pàgina el registre %{organization} i enganxar-lo!
+          title: Casi estem!
       datetime:
         distance_in_words:
           about_x_hours:
-            one: about 1 hour
+            one: aproximadament 1 hora
             other: about %{count} hours
           about_x_months:
-            one: about 1 month
+            one: aproximadament 1 mes
             other: about %{count} months
           about_x_years:
-            one: about 1 year
+            one: aproximadament 1 any
             other: about %{count} years
           almost_x_years:
-            one: almost 1 year
+            one: casi 1 any
             other: almost %{count} years
-          half_a_minute: half a minute
+          half_a_minute: mig minut
           less_than_x_minutes:
-            one: less than a minute
+            one: menys d'un minut
             other: less than %{count} minutes
           less_than_x_seconds:
             one: less than 1 second
