@@ -38,60 +38,60 @@ ca:
         distance_in_words:
           about_x_hours:
             one: aproximadament 1 hora
-            other: about %{count} hours
+            other: aproximadament %{count} hores
           about_x_months:
             one: aproximadament 1 mes
-            other: about %{count} months
+            other: al voltant de %{count} mesos
           about_x_years:
             one: aproximadament 1 any
-            other: about %{count} years
+            other: al voltant de %{count} anys
           almost_x_years:
             one: casi 1 any
-            other: almost %{count} years
+            other: gairebé %{count} anys
           half_a_minute: mig minut
           less_than_x_minutes:
             one: menys d'un minut
-            other: less than %{count} minutes
+            other: menys de %{count} minuts
           less_than_x_seconds:
-            one: less than 1 second
-            other: less than %{count} seconds
+            one: menys d'un segon
+            other: menys de %{count} segons
           over_x_years:
-            one: over 1 year
-            other: over %{count} years
+            one: casi 1 any
+            other: més de %{count} anys
           x_days:
-            one: 1 day
-            other: "%{count} days"
+            one: 1 dia
+            other: "%{count} dies"
           x_minutes:
-            one: 1 minute
-            other: "%{count} minutes"
+            one: 1 minut
+            other: "%{count} minuts"
           x_months:
-            one: 1 month
-            other: "%{count} months"
+            one: 1 mes
+            other: "%{count} mesos"
           x_seconds:
-            one: 1 second
-            other: "%{count} seconds"
+            one: 1 segon
+            other: "%{count} segons"
       errors:
         messages:
-          blank: Looks like you haven’t entered anything in this field
+          blank: Sembla que no has introduit res en aquest camp
           email:
-            blank: Please enter an email address
-            invalid: The email address looks incomplete
-            taken: This email is already in use for another account. Try signing in or use another email
+            blank: Si us plau, entra l'adreça electrònica
+            invalid: Aquesta adreça electrònica sembla incompleta
+            taken: Aquesta adreça electrònica s'utilitza per un altre compte. Prova d'entrar o utilitzar una altra adreça
           password:
-            email_included_in_password: The password you have entered is too similar to your email
-            name_included_in_password: The password you have entered is too similar to your name
-            nickname_included_in_password: The password you have entered is too similar to your nickname
-            not_enough_unique_characters: The password you have entered does not have enough different characters
-            password_too_common: The password you have entered is very common - we suggest using a different password
-            password_too_short: The password you have entered is too short
+            email_included_in_password: La contrasenya que has introduït és massa similiar a la teva adreça electrònica
+            name_included_in_password: La contrasenya que has introduït és massa similiar al teu nom
+            nickname_included_in_password: La contrasenya que has introduït és massa similiar al teu àlies
+            not_enough_unique_characters: La contrasenya que has introduït no té suficients càracters diferents
+            password_too_common: La contrasenya que has introduït és força comuna - et suggerim que utilitzis un de diferent
+            password_too_short: La contrasenya que heu introduït és massa curta
       shared:
         password_fields:
-          hidden_password: La contrasenya està ocultada
-          hide_password: Oculta la contrasenya
+          hidden_password: La contrasenya no és visible
+          hide_password: Amaga la contrasenya
           show_password: Mostra la contrasenya
           shown_password: La contrasenya és visible
   devise:
     confirmations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: S'ha enviat un missatge amb el codi de confirmació a la teva adreça elecrònca. Si us plau, copia i enganxa el codi de confirmació en aquesta pàgina.
     registrations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: S'ha enviat un missatge amb el codi de confirmació a la teva adreça elecrònca. Si us plau, copia i enganxa el codi de confirmació en aquesta pàgina.
