@@ -70,6 +70,20 @@ de:
           x_seconds:
             one: 1 second
             other: "%{count} seconds"
+      errors:
+        messages:
+          blank: Looks like you haven’t entered anything in this field
+          email:
+            blank: Please enter an email address
+            invalid: The email address looks incomplete
+            taken: This email is already in use for another account. Try signing in or use another email
+          password:
+            email_included_in_password: The password you have entered is too similar to your email
+            name_included_in_password: The password you have entered is too similar to your name
+            nickname_included_in_password: The password you have entered is too similar to your nickname
+            not_enough_unique_characters: The password you have entered does not have enough different characters
+            password_too_common: The password you have entered is very common - we suggest using a different password
+            password_too_short: The password you have entered is too short
       shared:
         password_fields:
           hidden_password: Your password is hidden
