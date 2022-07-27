@@ -53,10 +53,15 @@ export default class InstantValidator {
   }
 
   validate($input) {
+    let $recheck = $($input.data("instantRecheck"));
     this.tamper($input);
     this.post($input).done((response) => {
       this.setFeedback(response, $input);
     });
+
+    if ($recheck.length && this.isTampered($recheck)) {
+      this.validate($recheck)
+    }
   }
 
   setFeedback(data, $input) {
@@ -76,13 +81,14 @@ export default class InstantValidator {
   }
 
   addErrors($dest, msg) {
+    console.log("$dest", $dest, "%form", this.$form)
     if ($dest.closest("label").find(".form-error").length > 1) {
       // Decidim may add and additional error class that does not play well with abide
       $dest.closest("label").find(".form-error:last").remove();
     }
     this.$form.foundation("addErrorClasses", $dest);
     if (msg) {
-      $dest.closest("label").find(".form-error").text(msg);
+      $dest.closest("label").find(".form-error").html(msg);
     }
   }
 
