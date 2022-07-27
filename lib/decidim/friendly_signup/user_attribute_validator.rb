@@ -31,17 +31,40 @@ module Decidim
         return if valid?
 
         errors.map do |msg|
-          key = [:blank, :invalid, :taken].find { |err| msg == I18n.t(err, scope: "errors.messages") }
+          key = find_key(msg)
+          next if key == :nickname_included_in_password && FriendlySignup.hide_nickname.present?
+
           custom_error(key).presence || msg.upcase_first
-        end.join(". ")
+        end.join(".<br>")
       end
 
+      private
+
       def custom_error(key)
+        return if key.blank?
+
         generic = I18n.t(key, scope: "decidim.friendly_signup.errors.messages", default: "")
         I18n.t("#{attribute}.#{key}", scope: "decidim.friendly_signup.errors.messages", default: generic)
       end
 
-      private
+      def find_key(msg)
+        case attribute
+        when "password"
+          [:blacklisted,
+           :domain_included_in_password,
+           :email_included_in_password,
+           :fallback,
+           :name_included_in_password,
+           :nickname_included_in_password,
+           :not_enough_unique_characters,
+           :password_not_allowed,
+           :password_too_common,
+           :password_too_long,
+           :password_too_short].find { |key| msg == I18n.t(key, scope: "password_validator") }
+        else
+          [:blank, :invalid, :taken].find { |key| msg == I18n.t(key, scope: "errors.messages") }
+        end
+      end
 
       def valid_attribute?
         %w(nickname email name password).include? attribute.to_s
@@ -49,10 +72,6 @@ module Decidim
 
       def valid_suggestor?
         ["nickname"].include? attribute.to_s
-      end
-
-      def valid_users
-        Decidim::UserBaseEntity.where(invitation_token: nil, organization: current_organization)
       end
     end
   end

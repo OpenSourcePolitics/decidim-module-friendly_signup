@@ -53,10 +53,15 @@ export default class InstantValidator {
   }
 
   validate($input) {
+    let $recheck = $($input.data("instantRecheck"));
     this.tamper($input);
     this.post($input).done((response) => {
       this.setFeedback(response, $input);
     });
+
+    if ($recheck.length && this.isTampered($recheck)) {
+      this.validate($recheck)
+    }
   }
 
   setFeedback(data, $input) {
@@ -82,7 +87,7 @@ export default class InstantValidator {
     }
     this.$form.foundation("addErrorClasses", $dest);
     if (msg) {
-      $dest.closest("label").find(".form-error").text(msg);
+      $dest.closest("label").find(".form-error").html(msg);
     }
   }
 

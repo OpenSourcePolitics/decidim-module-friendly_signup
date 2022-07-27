@@ -8,11 +8,18 @@ en:
     friendly_signup:
       errors:
         messages:
-          blank: Looks like you haven’t entered anything in this field.
-          taken: This email is already in use for another account. Try signing in or use another email
+          blank: Looks like you haven’t entered anything in this field
           email:
+            blank: Please enter an email address
             invalid: The email address looks incomplete
-          too_short: The password you have entered is too short
+            taken: This email is already in use for another account. Try signing in or use another email
+          password:
+            password_too_short: The password you have entered is too short
+            not_enough_unique_characters: The password you have entered does not have enough different characters
+            password_too_common: The password you have entered is very common - we suggest using a different password
+            name_included_in_password: The password you have entered is too similar to your name
+            nickname_included_in_password: The password you have entered is too similar to your nickname
+            email_included_in_password: The password you have entered is too similar to your email
       confirmation_code_form:
         expired: Sorry, this code has expired, please generate a new one.
         invalid: Code is invalid, please make sure to copy the code emailed to you.
