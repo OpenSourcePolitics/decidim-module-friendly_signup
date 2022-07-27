@@ -15,6 +15,7 @@ module Decidim
           resources :confirmation_codes, only: [:index, :create]
         end
         post :validate, to: "validator#validate"
+        put :validate, to: "validator#validate"
       end
 
       # Prepare a zone to create overrides
@@ -23,10 +24,10 @@ module Decidim
       config.after_initialize do
         Decidim::Devise::SessionsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
+        Decidim::Devise::PasswordsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
+        Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
         Decidim::Devise::ConfirmationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
-        Decidim::Devise::InvitationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
-        Decidim::Devise::PasswordsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::RegistrationForm.include(Decidim::FriendlySignup::AutoNickname)
         Decidim::User.include(Decidim::FriendlySignup::NeedsRegistrationCodes)
