@@ -21,6 +21,7 @@ module Decidim
       # https://edgeguides.rubyonrails.org/engines.html#overriding-models-and-controllers
       # overrides
       config.after_initialize do
+        Decidim::Devise::SessionsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::Devise::RegistrationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)
         Decidim::Devise::ConfirmationsController.include(Decidim::FriendlySignup::RegistrationsRedirect)

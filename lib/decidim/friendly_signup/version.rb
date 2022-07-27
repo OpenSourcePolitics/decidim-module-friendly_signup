@@ -5,6 +5,6 @@ module Decidim
   module FriendlySignup
     DECIDIM_VERSION = "0.26.2"
     COMPAT_DECIDIM_VERSION = "~> 0.26.0"
-    VERSION = "0.4"
+    VERSION = "0.4.1"
   end
 end
