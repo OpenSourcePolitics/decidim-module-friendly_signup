@@ -22,7 +22,7 @@ ca:
           title: L'últim pas...
           verify: Verifica
         mailer:
-          subject: Confirma la teva compte a %{organization}
+          subject: "%{code} is your confirmation code for %{organization}"
         resend_code:
           sent: El codi de confirmació s'ha enviat a %{email}.
       confirmation_codes_mailer:
