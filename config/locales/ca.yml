@@ -5,6 +5,10 @@ ca:
       confirmation_code:
         code: Codi de confirmació
   decidim:
+    forms:
+      errors:
+        decidim/user:
+          email: Please enter a valid email address
     friendly_signup:
       confirmation_code_form:
         expired: Aquest codi ha caducat, si us plau, genera un nou codi.
