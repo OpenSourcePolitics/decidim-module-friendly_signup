@@ -7,6 +7,8 @@ shared_examples "on/off sign in passwords" do
     end
 
     it "There is a show password button" do
+      expect(page).to have_field("session_user_password")
+      expect(page).not_to have_field("session_user_password_confirmation")
       expect(page).to have_css(".user-password")
       expect(page).to have_css(".user-password title", visible: :hidden, text: "Show password")
     end
@@ -19,6 +21,8 @@ shared_examples "on/off sign in passwords" do
     end
 
     it "There is a show password button" do
+      expect(page).to have_field("session_user_password")
+      expect(page).not_to have_field("session_user_password_confirmation")
       expect(page).not_to have_css(".user-password")
     end
   end

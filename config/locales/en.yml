@@ -5,6 +5,10 @@ en:
       confirmation_code:
         code: Confirmation code
   decidim:
+    forms:
+      errors:
+        decidim/user:
+          email: Please enter a valid email address
     friendly_signup:
       confirmation_code_form:
         expired: Sorry, this code has expired, please generate a new one.
