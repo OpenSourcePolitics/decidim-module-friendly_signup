@@ -89,6 +89,8 @@ shared_examples "on/off standard confirmation" do
 
       expect(user.reload.confirmed?).to eq(false)
 
+      expect(last_email.subject).to include(code.to_s)
+      expect(last_email.subject).to include(organization.name)
       expect(last_email_code).to eq(code.to_s)
       fill_confirmation_code(last_email_code)
 

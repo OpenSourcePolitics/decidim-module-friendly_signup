@@ -25,7 +25,7 @@ en:
           title: One last step...
           verify: Verify
         mailer:
-          subject: Confirm your account at %{organization}
+          subject: "%{code} is your confirmation code for %{organization}"
         resend_code:
           sent: The confirmation code has been sent to %{email}.
       confirmation_codes_mailer:

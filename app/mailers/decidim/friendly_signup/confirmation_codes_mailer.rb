@@ -14,7 +14,7 @@ module Decidim
         @expires_at = @user.confirmation_sent_at + @user.class.confirm_within if @user.class.confirm_within
 
         with_user(user) do
-          mail(to: "#{user.name} <#{@email}>", subject: I18n.t("decidim.friendly_signup.confirmation_codes.mailer.subject", organization: @organization.name))
+          mail(to: "#{user.name} <#{@email}>", subject: I18n.t("decidim.friendly_signup.confirmation_codes.mailer.subject", organization: @organization.name, code: @code))
         end
       end
     end
