@@ -5,6 +5,10 @@ fr:
       confirmation_code:
         code: Code de confirmation
   decidim:
+    forms:
+      errors:
+        decidim/user:
+          email: Please enter a valid email address
     friendly_signup:
       confirmation_code_form:
         expired: Votre mot de passe a expiré. Veuillez en créer un nouveau.
