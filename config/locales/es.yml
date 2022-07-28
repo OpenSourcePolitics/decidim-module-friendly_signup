@@ -22,7 +22,7 @@ es:
           title: Solo un último paso...
           verify: Verificar
         mailer:
-          subject: Confirmar tu cuenta en %{organization}
+          subject: "%{code} is your confirmation code for %{organization}"
         resend_code:
           sent: Se ha enviado un correo de confirmación a %{email}.
       confirmation_codes_mailer:
