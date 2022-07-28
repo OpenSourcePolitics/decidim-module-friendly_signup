@@ -86,12 +86,12 @@ fr:
             password_too_short: Le mot de passe que vous avez saisi est trop court
       shared:
         password_fields:
-          hidden_password: Your password is hidden
-          hide_password: Hide password
-          show_password: Show password
-          shown_password: Your password is shown
+          hidden_password: Votre mot de passe est caché
+          hide_password: Cacher le mot de passe
+          show_password: Afficher le mot de passe
+          shown_password: Votre mot de passe est affiché
   devise:
     confirmations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: Un message contenant un code a été envoyé à votre adresse email. Veuillez copier et coller le code reçu dans cette page.
     registrations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: Un message contenant un code a été envoyé à votre adresse email. Veuillez copier et coller le code reçu dans cette page.
