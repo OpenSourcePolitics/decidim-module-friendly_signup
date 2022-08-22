@@ -8,7 +8,7 @@ fr:
     forms:
       errors:
         decidim/user:
-          email: Please enter a valid email address
+          email: Veuillez saisir une adresse email valide
     friendly_signup:
       confirmation_code_form:
         expired: Votre mot de passe a expiré. Veuillez en créer un nouveau.
@@ -26,7 +26,7 @@ fr:
           title: Une dernière étape...
           verify: Vérifier
         mailer:
-          subject: "%{code} is your confirmation code for %{organization}"
+          subject: "%{code} est votre code de confirmation sur %{organization}"
         resend_code:
           sent: Un code de confirmation a été envoyé à votre mail - %{email}.
       confirmation_codes_mailer:
