@@ -16,10 +16,10 @@ fr:
         invalid_token: Jeton non valable.
       confirmation_codes:
         create:
-          user_confirmed: Bienvenu %{name}! Votre compte à été confirmé!
+          user_confirmed: Bienvenue %{name} ! Votre compte a été confirmé !
         index:
           code_not_received: Vous n’avez pas reçu le code ?
-          confirm_send_code: Voulez-vous renvoyer un code de confirmation à %{email}?<br>Vérifiez le dossier spam au cas où !
+          confirm_send_code: Voulez-vous renvoyer un code de confirmation à %{email} ?<br>Vérifiez le dossier spam au cas où !
           description: Vous devriez recevoir un code à 4 chiffres à %{email}.<br>Si vous ne le trouvez pas, vérifiez votre dossier spam ou attendez 10 minutes.
           enter_code: Saisissez le code
           subtitle: Vous devez confirmer votre adresse e-mail pour pouvoir soumettre des propositions, commenter et voter.
@@ -31,7 +31,7 @@ fr:
           sent: Un code de confirmation a été envoyé à votre mail - %{email}.
       confirmation_codes_mailer:
         confirmation_instructions:
-          copy: 'Copiez ce code:'
+          copy: 'Copiez ce code :'
           expires_in: Il va expirer dans %{time}.
           ignore: |-
             Si vous n'avez pas demandé à recevoir cette communication, veuillez ignorer cet email.<br />
@@ -76,7 +76,7 @@ fr:
             other: "%{count} secondes"
       errors:
         messages:
-          blank: Il semble que vous n'avez rien saisi dans ce champ
+          blank: Il semble que vous n'ayez rien saisi dans ce champ
           email:
             blank: Veuillez saisir une adresse électronique
             invalid: L'adresse email semble incomplète
