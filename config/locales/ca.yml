@@ -1,0 +1,101 @@
+---
+ca:
+  activemodel:
+    attributes:
+      confirmation_code:
+        code: Codi de confirmació
+  decidim:
+    forms:
+      errors:
+        decidim/user:
+          email: Please enter a valid email address
+    friendly_signup:
+      confirmation_code_form:
+        expired: Aquest codi ha caducat, si us plau, genera un nou codi.
+        invalid: Aquest codi és invàlida. Si us plau, assegurat que has introduit correctament el codi que hem enviat.
+        invalid_token: Permis invàlid.
+      confirmation_codes:
+        create:
+          user_confirmed: Hola %{name}! La teva compte ha estat confirmada amb èxit!
+        index:
+          code_not_received: No has rebut el codi?
+          confirm_send_code: Vols renviar el codi de confirmació a %{email}?<br>Revisar que no estigui a la carpeta de spam per si de cas!
+          description: Rebràs un codi de 4 números at %{email}.<br>Si no  el pots trobar, revisa la carpeta de spam o espera fins a 10 minuts.
+          enter_code: Entra el codi
+          subtitle: Necessites confirmar el correu electrònic abans de poder publicar propostes, comentar i votar.
+          title: L'últim pas...
+          verify: Verifica
+        mailer:
+          subject: "%{code} is your confirmation code for %{organization}"
+        resend_code:
+          sent: El codi de confirmació s'ha enviat a %{email}.
+      confirmation_codes_mailer:
+        confirmation_instructions:
+          copy: 'Copia aquest codi:'
+          expires_in: El codi caducarà el %{time}.
+          ignore: |-
+            Si no has demanat aquesta comunicació, si us plau, ignora aquest email. <br />
+            La teva compte no estarà activa fins que estigui confirmada.
+          subtitle: Per finalitzar el registre només necessites copiar aquest codi de 4 dígits, tornar a la pàgina el registre %{organization} i enganxar-lo!
+          title: Casi estem!
+      datetime:
+        distance_in_words:
+          about_x_hours:
+            one: aproximadament 1 hora
+            other: aproximadament %{count} hores
+          about_x_months:
+            one: aproximadament 1 mes
+            other: al voltant de %{count} mesos
+          about_x_years:
+            one: aproximadament 1 any
+            other: al voltant de %{count} anys
+          almost_x_years:
+            one: casi 1 any
+            other: gairebé %{count} anys
+          half_a_minute: mig minut
+          less_than_x_minutes:
+            one: menys d'un minut
+            other: menys de %{count} minuts
+          less_than_x_seconds:
+            one: menys d'un segon
+            other: menys de %{count} segons
+          over_x_years:
+            one: casi 1 any
+            other: més de %{count} anys
+          x_days:
+            one: 1 dia
+            other: "%{count} dies"
+          x_minutes:
+            one: 1 minut
+            other: "%{count} minuts"
+          x_months:
+            one: 1 mes
+            other: "%{count} mesos"
+          x_seconds:
+            one: 1 segon
+            other: "%{count} segons"
+      errors:
+        messages:
+          blank: Sembla que no has introduit res en aquest camp
+          email:
+            blank: Si us plau, entra l'adreça electrònica
+            invalid: Aquesta adreça electrònica sembla incompleta
+            taken: Aquesta adreça electrònica s'utilitza per un altre compte. Prova d'entrar o utilitzar una altra adreça
+          password:
+            email_included_in_password: La contrasenya que has introduït és massa similiar a la teva adreça electrònica
+            name_included_in_password: La contrasenya que has introduït és massa similiar al teu nom
+            nickname_included_in_password: La contrasenya que has introduït és massa similiar al teu àlies
+            not_enough_unique_characters: La contrasenya que has introduït no té suficients càracters diferents
+            password_too_common: La contrasenya que has introduït és força comuna - et suggerim que utilitzis un de diferent
+            password_too_short: La contrasenya que heu introduït és massa curta
+      shared:
+        password_fields:
+          hidden_password: La contrasenya no és visible
+          hide_password: Amaga la contrasenya
+          show_password: Mostra la contrasenya
+          shown_password: La contrasenya és visible
+  devise:
+    confirmations:
+      signed_up_but_code_required: S'ha enviat un missatge amb el codi de confirmació a la teva adreça elecrònca. Si us plau, copia i enganxa el codi de confirmació en aquesta pàgina.
+    registrations:
+      signed_up_but_code_required: S'ha enviat un missatge amb el codi de confirmació a la teva adreça elecrònca. Si us plau, copia i enganxa el codi de confirmació en aquesta pàgina.
