@@ -19,43 +19,43 @@ de:
           user_confirmed: Willkommen %{name}! Ihr Konto wurde erfolgreich bestätigt!
         index:
           code_not_received: Code nicht erhalten?
-          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
-          description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
-          enter_code: Enter code
-          subtitle: You need to confirm your email address to be able to submit proposals, comment and vote.
-          title: One last step...
-          verify: Verify
+          confirm_send_code: Möchten Sie den Bestätigungscode erneut an %{email} senden?<br>Stellen Sie sicher, dass Sie den Spam-Ordner überprüfen, wenn Sie es wünschen!
+          description: Du solltest einen 4-stelligen Code unter %{email} erhalten. <br>Wenn Sie es nicht finden, überprüfen Sie bitte Ihren Spam-Ordner oder warten bis zu 10 Minuten.
+          enter_code: Code eingeben
+          subtitle: Sie müssen Ihre E-Mail-Adresse bestätigen, um Vorschläge, Kommentare und Stimmen einreichen können.
+          title: Noch ein letzter Schritt...
+          verify: Überprüfen
         mailer:
-          subject: "%{code} is your confirmation code for %{organization}"
+          subject: "%{code} ist Ihr Bestätigungs-Code für %{organization}"
         resend_code:
-          sent: The confirmation code has been sent to %{email}.
+          sent: Der Bestätigungscode wurde an %{email} gesendet.
       confirmation_codes_mailer:
         confirmation_instructions:
-          copy: 'Copy this code:'
-          expires_in: It will expire in %{time}.
+          copy: 'Diesen Code kopieren:'
+          expires_in: Es wird in %{time} ablaufen.
           ignore: |-
-            If you didn't request this comunication, please ignore this email.<br />
-            Your account won't be active until your account is fully confirmed.
-          subtitle: To finalize the registration you just need to copy the 4 digit code below, go back to the %{organization} signup page and paste it!
-          title: You're almost there!
+            Wenn Sie diese Mitteilung nicht angefordert haben, ignorieren Sie bitte diese E-Mail.<br />
+            Ihr Konto wird erst dann aktiv sein, wenn Ihr Konto vollständig bestätigt ist.
+          subtitle: Um die Registrierung abzuschließen, müssen Sie nur den 4-stelligen Code unten kopieren, gehen Sie zurück auf die %{organization} -Anmeldeseite und fügen Sie ihn ein!
+          title: Sie sind fast da!
       datetime:
         distance_in_words:
           about_x_hours:
-            one: about 1 hour
-            other: about %{count} hours
+            one: ca. %{count} Stunde
+            other: ca. %{count} Stunden
           about_x_months:
-            one: about 1 month
-            other: about %{count} months
+            one: ca. %{count} Monat
+            other: ca. %{count} Monate
           about_x_years:
-            one: about 1 year
-            other: about %{count} years
+            one: ca. %{count} Jahr
+            other: ca. %{count} Jahre
           almost_x_years:
             one: almost 1 year
-            other: almost %{count} years
-          half_a_minute: half a minute
+            other: fast %{count} Jahre
+          half_a_minute: eine halbe Minute
           less_than_x_minutes:
-            one: less than a minute
-            other: less than %{count} minutes
+            one: weniger als %{count} Minute
+            other: weniger als %{count} Minuten
           less_than_x_seconds:
             one: less than 1 second
             other: less than %{count} seconds
