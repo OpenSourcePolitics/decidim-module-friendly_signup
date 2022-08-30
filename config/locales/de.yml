@@ -3,22 +3,22 @@ de:
   activemodel:
     attributes:
       confirmation_code:
-        code: Confirmation code
+        code: Bestätigungscode
   decidim:
     forms:
       errors:
         decidim/user:
-          email: Please enter a valid email address
+          email: Bitte geben Sie eine gültige E-Mail-Adresse an
     friendly_signup:
       confirmation_code_form:
-        expired: Sorry, this code has expired, please generate a new one.
-        invalid: Code is invalid, please make sure to copy the code emailed to you.
-        invalid_token: Invalid token.
+        expired: Entschuldigung, dieser Code ist abgelaufen, bitte generiere einen neuen Code.
+        invalid: Code ist ungültig, bitte kopieren Sie den Ihnen zugeschickten Code.
+        invalid_token: Ungültiges Token.
       confirmation_codes:
         create:
-          user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
+          user_confirmed: Willkommen %{name}! Ihr Konto wurde erfolgreich bestätigt!
         index:
-          code_not_received: Didn't receive the code?
+          code_not_received: Code nicht erhalten?
           confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
           description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
           enter_code: Enter code
@@ -76,26 +76,26 @@ de:
             other: "%{count} Sekunden"
       errors:
         messages:
-          blank: Looks like you haven’t entered anything in this field
+          blank: Es sieht so aus, als ob Sie nichts in dieses Feld eingegeben haben
           email:
-            blank: Please enter an email address
-            invalid: The email address looks incomplete
-            taken: This email is already in use for another account. Try signing in or use another email
+            blank: Bitte geben Sie eine E-Mail-Adresse an
+            invalid: Die E-Mail-Adresse sieht unvollständig aus
+            taken: Diese E-Mail wird bereits für ein anderes Konto verwendet. Versuchen Sie sich anzumelden oder benutzen Sie eine andere E-Mail-Adresse
           password:
-            email_included_in_password: The password you have entered is too similar to your email
-            name_included_in_password: The password you have entered is too similar to your name
-            nickname_included_in_password: The password you have entered is too similar to your nickname
-            not_enough_unique_characters: The password you have entered does not have enough different characters
-            password_too_common: The password you have entered is very common - we suggest using a different password
-            password_too_short: The password you have entered is too short
+            email_included_in_password: Das eingegebene Passwort ist zu ähnlich zu Ihrer E-Mail
+            name_included_in_password: Das eingegebene Passwort ist zu ähnlich zu Ihrem Namen
+            nickname_included_in_password: Das eingegebene Passwort ist zu ähnlich zu Ihrem Spitznamen
+            not_enough_unique_characters: Das eingegebene Passwort hat nicht genug verschiedene Zeichen
+            password_too_common: Das eingegebene Passwort ist sehr häufig - wir empfehlen ein anderes Passwort zu verwenden
+            password_too_short: Das eingegebene Kennwort ist zu kurz
       shared:
         password_fields:
-          hidden_password: Your password is hidden
-          hide_password: Hide password
-          show_password: Show password
-          shown_password: Your password is shown
+          hidden_password: Ihr Passwort ist versteckt
+          hide_password: Passwort verstecken
+          show_password: Passwort anzeigen
+          shown_password: Ihr Passwort wird gezeigt
   devise:
     confirmations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: Eine Nachricht mit einem Code wurde an Ihre E-Mail-Adresse gesendet. Bitte kopieren und fügen Sie den empfangenen Code auf dieser Seite ein.
     registrations:
-      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: Eine Nachricht mit einem Code wurde an Ihre E-Mail-Adresse gesendet. Bitte kopieren und fügen Sie den empfangenen Code auf dieser Seite ein.
