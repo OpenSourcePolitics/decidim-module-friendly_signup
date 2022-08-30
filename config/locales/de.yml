@@ -50,18 +50,18 @@ de:
             one: ca. %{count} Jahr
             other: ca. %{count} Jahre
           almost_x_years:
-            one: almost 1 year
+            one: fast %{count} Jahr
             other: fast %{count} Jahre
           half_a_minute: eine halbe Minute
           less_than_x_minutes:
             one: weniger als %{count} Minute
             other: weniger als %{count} Minuten
           less_than_x_seconds:
-            one: less than 1 second
-            other: less than %{count} seconds
+            one: weniger als %{count} Sekunde
+            other: weniger als %{count} Sekunden
           over_x_years:
-            one: over 1 year
-            other: over %{count} years
+            one: mehr als %{count} Jahr
+            other: mehr als %{count} Jahre
           x_days:
             one: '%{count} Tag'
             other: "%{count} Tage"
