@@ -63,17 +63,17 @@ de:
             one: over 1 year
             other: over %{count} years
           x_days:
-            one: 1 day
-            other: "%{count} days"
+            one: '%{count} Tag'
+            other: "%{count} Tage"
           x_minutes:
-            one: 1 minute
-            other: "%{count} minutes"
+            one: '%{count} Minute'
+            other: "%{count} Minuten"
           x_months:
-            one: 1 month
-            other: "%{count} months"
+            one: '%{count} Monat'
+            other: "%{count} Monate"
           x_seconds:
-            one: 1 second
-            other: "%{count} seconds"
+            one: '%{count} Sekunde'
+            other: "%{count} Sekunden"
       errors:
         messages:
           blank: Looks like you haven’t entered anything in this field
