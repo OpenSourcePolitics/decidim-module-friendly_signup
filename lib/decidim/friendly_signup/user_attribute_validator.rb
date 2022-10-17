@@ -63,8 +63,7 @@ module Decidim
            :password_too_common,
            :password_too_long,
            :password_too_short,
-           :password_blank
-           ].find { |key| msg == I18n.t(key, scope: "password_validator") }
+           :password_blank].find { |key| msg == I18n.t(key, scope: "password_validator") }
         else
           [:blank, :invalid, :taken].find { |key| msg == I18n.t(key, scope: "errors.messages") }
         end

@@ -37,9 +37,7 @@ module Decidim
           end
 
           on(:invalid) do
-            if params[:user][:password].blank?
-              @form.errors.add(:password, :password_blank)
-            end
+            @form.errors.add(:password, :password_blank) if params[:user][:password].blank?
             flash.now[:alert] = @form.errors.full_messages.join(", ") if @form.errors.full_messages.any?
             render :new
           end
