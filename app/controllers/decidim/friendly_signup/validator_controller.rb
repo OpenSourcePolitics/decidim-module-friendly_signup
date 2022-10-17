@@ -7,6 +7,7 @@ module Decidim
 
       def validate
         @form = form(Decidim::RegistrationForm).from_params(params)
+        @form.errors.add(:password, :password_blank) if params[:attribute] == "password" && @form.password.blank?
         validator = UserAttributeValidator.new(form: @form, attribute: params[:attribute])
         render json: {
           valid: validator.valid?,
