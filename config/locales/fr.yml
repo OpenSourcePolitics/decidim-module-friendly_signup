@@ -88,6 +88,7 @@ fr:
             not_enough_unique_characters: Le mot de passe que vous avez saisi ne comporte pas suffisamment de caractères différents
             password_too_common: Le mot de passe que vous avez saisi est très courant - nous vous suggérons d'utiliser un autre mot de passe
             password_too_short: Le mot de passe que vous avez saisi est trop court
+            password_blank: Il semblerait que votre mot de passe soit vide
       shared:
         password_fields:
           hidden_password: Votre mot de passe est caché
