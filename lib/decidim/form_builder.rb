@@ -664,7 +664,6 @@ module Decidim
       return block_given? ? yield.html_safe : "".html_safe if text == false
 
       text = default_label_text(object, attribute) if text.nil? || text == true
-      puts "AAAA", attribute
       text += required_for_attribute(attribute) if show_required
 
       text = if field_before_label && block_given?
@@ -770,11 +769,6 @@ module Decidim
     end
 
     def required_for_attribute(attribute)
-      puts "BBBB"
-      puts attribute_required?(attribute)
-      puts attribute == :password
-      puts object.class.name
-
       if attribute_required?(attribute) || (attribute == :password && object.class.name == "Decidim::RegistrationForm")
         visible_title = content_tag(:span, "*", "aria-hidden": true)
         screenreader_title = content_tag(
