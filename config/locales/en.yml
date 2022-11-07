@@ -1,17 +1,15 @@
 ---
 en:
-  password_validator:
-    password_blank: "can't be blank"
   activemodel:
+    attributes:
+      confirmation_code:
+        code: Confirmation code
     errors:
       models:
         user:
           attributes:
             password:
-              password_blank: "can't be blank"
-    attributes:
-      confirmation_code:
-        code: Confirmation code
+              password_blank: can't be blank
   decidim:
     forms:
       errors:
@@ -103,10 +101,10 @@ en:
               to your nickname
             not_enough_unique_characters: The password you have entered does not have
               enough different characters
+            password_blank: Looks like you haven’t entered any password
             password_too_common: The password you have entered is very common - we
               suggest using a different password
             password_too_short: The password you have entered is too short
-            password_blank: Looks like you haven’t entered any password
       shared:
         password_fields:
           hidden_password: Your password is hidden
@@ -120,3 +118,5 @@ en:
     registrations:
       signed_up_but_code_required: A message with a code has been sent to your email
         address. Please copy and paste the received code in this page.
+  password_validator:
+    password_blank: can't be blank

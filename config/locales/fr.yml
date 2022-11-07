@@ -12,17 +12,21 @@ fr:
     friendly_signup:
       confirmation_code_form:
         expired: Votre mot de passe a expiré. Veuillez en créer un nouveau.
-        invalid: Le code n'est pas valide, veuillez vous assurer de copier le code qui vous a été envoyé par e-mail.
+        invalid: Le code n'est pas valide, veuillez vous assurer de copier le code
+          qui vous a été envoyé par e-mail.
         invalid_token: Jeton non valable.
       confirmation_codes:
         create:
           user_confirmed: Bienvenue %{name} ! Votre compte a été confirmé !
         index:
           code_not_received: Vous n’avez pas reçu le code ?
-          confirm_send_code: Voulez-vous renvoyer un code de confirmation à %{email} ?<br>Vérifiez le dossier spam au cas où !
-          description: Vous devriez recevoir un code à 4 chiffres à %{email}.<br>Si vous ne le trouvez pas, vérifiez votre dossier spam ou attendez 10 minutes.
+          confirm_send_code: Voulez-vous renvoyer un code de confirmation à %{email}
+            ?<br>Vérifiez le dossier spam au cas où !
+          description: Vous devriez recevoir un code à 4 chiffres à %{email}.<br>Si
+            vous ne le trouvez pas, vérifiez votre dossier spam ou attendez 10 minutes.
           enter_code: Saisissez le code
-          subtitle: Vous devez confirmer votre adresse e-mail pour pouvoir soumettre des propositions, commenter et voter.
+          subtitle: Vous devez confirmer votre adresse e-mail pour pouvoir soumettre
+            des propositions, commenter et voter.
           title: Une dernière étape...
           verify: Vérifier
         mailer:
@@ -36,7 +40,9 @@ fr:
           ignore: |-
             Si vous n'avez pas demandé à recevoir cette communication, veuillez ignorer cet email.<br />
             Votre compte ne sera pas actif tant que votre compte n'est pas confirmé.
-          subtitle: Pour finaliser l'inscription, il vous suffit de copier le code à 4 chiffres ci-dessous, de retourner à la page d'inscription de %{organization} et de le coller !
+          subtitle: Pour finaliser l'inscription, il vous suffit de copier le code
+            à 4 chiffres ci-dessous, de retourner à la page d'inscription de %{organization}
+            et de le coller !
           title: Vous y êtes presque!
       datetime:
         distance_in_words:
@@ -80,15 +86,21 @@ fr:
           email:
             blank: Veuillez saisir une adresse électronique
             invalid: L'adresse email semble incomplète
-            taken: Cette adresse électronique est déjà utilisée pour un autre compte. Essayez de vous connecter ou d'utiliser une autre adresse email
+            taken: Cette adresse électronique est déjà utilisée pour un autre compte.
+              Essayez de vous connecter ou d'utiliser une autre adresse email
           password:
-            email_included_in_password: Le mot de passe que vous avez saisi est trop similaire à votre email
-            name_included_in_password: Le mot de passe que vous avez saisi est trop similaire à votre nom d'utilisateur
-            nickname_included_in_password: Le mot de passe que vous avez saisi est trop similaire à votre pseudonyme
-            not_enough_unique_characters: Le mot de passe que vous avez saisi ne comporte pas suffisamment de caractères différents
-            password_too_common: Le mot de passe que vous avez saisi est très courant - nous vous suggérons d'utiliser un autre mot de passe
-            password_too_short: Le mot de passe que vous avez saisi est trop court
+            email_included_in_password: Le mot de passe que vous avez saisi est trop
+              similaire à votre email
+            name_included_in_password: Le mot de passe que vous avez saisi est trop
+              similaire à votre nom d'utilisateur
+            nickname_included_in_password: Le mot de passe que vous avez saisi est
+              trop similaire à votre pseudonyme
+            not_enough_unique_characters: Le mot de passe que vous avez saisi ne comporte
+              pas suffisamment de caractères différents
             password_blank: Il semblerait que votre mot de passe soit vide
+            password_too_common: Le mot de passe que vous avez saisi est très courant
+              - nous vous suggérons d'utiliser un autre mot de passe
+            password_too_short: Le mot de passe que vous avez saisi est trop court
       shared:
         password_fields:
           hidden_password: Votre mot de passe est caché
@@ -97,6 +109,8 @@ fr:
           shown_password: Votre mot de passe est affiché
   devise:
     confirmations:
-      signed_up_but_code_required: Un message contenant un code a été envoyé à votre adresse email. Veuillez copier et coller le code reçu dans cette page.
+      signed_up_but_code_required: Un message contenant un code a été envoyé à votre
+        adresse email. Veuillez copier et coller le code reçu dans cette page.
     registrations:
-      signed_up_but_code_required: Un message contenant un code a été envoyé à votre adresse email. Veuillez copier et coller le code reçu dans cette page.
+      signed_up_but_code_required: Un message contenant un code a été envoyé à votre
+        adresse email. Veuillez copier et coller le code reçu dans cette page.
