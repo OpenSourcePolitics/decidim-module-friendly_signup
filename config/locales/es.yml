@@ -4,6 +4,12 @@ es:
     attributes:
       confirmation_code:
         code: Código de confirmación
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: can't be blank
   decidim:
     forms:
       errors:
@@ -86,6 +92,7 @@ es:
             name_included_in_password: La contraseña que has introducido es demasiado similar a tu nombre
             nickname_included_in_password: La contraseña que has introducido es demasiado similar a tu apodo
             not_enough_unique_characters: La contraseña que ha introducido no tiene suficientes caracteres diferentes
+            password_blank: Looks like you haven’t entered any password
             password_too_common: La contraseña que has introducido es muy común - te sugerimos usar una contraseña diferente
             password_too_short: La contraseña introducida es demasiado corta
       shared:
@@ -99,3 +106,5 @@ es:
       signed_up_but_code_required: Un mensaje con un código ha sido enviado a su dirección de correo electrónico. Por favor, copie y pegue el código recibido en esta página.
     registrations:
       signed_up_but_code_required: Un mensaje con un código ha sido enviado a su dirección de correo electrónico. Por favor, copie y pegue el código recibido en esta página.
+  password_validator:
+    password_blank: can't be blank
