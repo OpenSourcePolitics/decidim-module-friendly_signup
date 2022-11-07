@@ -20,6 +20,7 @@ module Decidim
       end
 
       private
+
       def confirm_path_url
         "#{root_url}#{decidim_friendly_signup.confirmation_codes_path(confirmation_token: @token)}"
       end
