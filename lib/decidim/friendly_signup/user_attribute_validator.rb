@@ -14,6 +14,8 @@ module Decidim
       def valid?
         @valid ||= begin
           form.validate
+          # Check if the password isn't empty, if it is, add it to form errors
+          form.errors.add(:password, :password_blank) if attribute == "password" && form.password.blank?
           # we don't validate the form but the attribute alone
           errors.blank?
         end
@@ -60,7 +62,8 @@ module Decidim
            :password_not_allowed,
            :password_too_common,
            :password_too_long,
-           :password_too_short].find { |key| msg == I18n.t(key, scope: "password_validator") }
+           :password_too_short,
+           :password_blank].find { |key| msg == I18n.t(key, scope: "password_validator") }
         else
           [:blank, :invalid, :taken].find { |key| msg == I18n.t(key, scope: "errors.messages") }
         end
