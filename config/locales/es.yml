@@ -9,12 +9,12 @@ es:
         user:
           attributes:
             password:
-              password_blank: can't be blank
+              password_blank: no puede dejarse en blanco
   decidim:
     forms:
       errors:
         decidim/user:
-          email: Please enter a valid email address
+          email: Por favor, introduce una dirección de correo electrónico válida
     friendly_signup:
       confirmation_code_form:
         expired: Este código ha expirado, por favor genera uno nuevo.
@@ -32,7 +32,7 @@ es:
           title: Solo un último paso...
           verify: Verificar
         mailer:
-          subject: "%{code} is your confirmation code for %{organization}"
+          subject: "%{code} es tu código de confirmación para %{organization}"
         resend_code:
           sent: Se ha enviado un correo de confirmación a %{email}.
       confirmation_codes_mailer:
@@ -92,7 +92,7 @@ es:
             name_included_in_password: La contraseña que has introducido es demasiado similar a tu nombre
             nickname_included_in_password: La contraseña que has introducido es demasiado similar a tu apodo
             not_enough_unique_characters: La contraseña que ha introducido no tiene suficientes caracteres diferentes
-            password_blank: Looks like you haven’t entered any password
+            password_blank: Parece que no has introducido ninguna contraseña
             password_too_common: La contraseña que has introducido es muy común - te sugerimos usar una contraseña diferente
             password_too_short: La contraseña introducida es demasiado corta
       shared:
@@ -107,4 +107,4 @@ es:
     registrations:
       signed_up_but_code_required: Un mensaje con un código ha sido enviado a su dirección de correo electrónico. Por favor, copie y pegue el código recibido en esta página.
   password_validator:
-    password_blank: can't be blank
+    password_blank: no puede dejarse en blanco
