@@ -4,6 +4,12 @@ fr:
     attributes:
       confirmation_code:
         code: Code de confirmation
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: ne peut pas être vide
   decidim:
     forms:
       errors:
@@ -114,3 +120,5 @@ fr:
     registrations:
       signed_up_but_code_required: Un message contenant un code a été envoyé à votre
         adresse email. Veuillez copier et coller le code reçu dans cette page.
+  password_validator:
+    password_blank: ne peut pas être vide
