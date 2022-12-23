@@ -4,6 +4,12 @@ de:
     attributes:
       confirmation_code:
         code: Bestätigungscode
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: muss angegeben werden
   decidim:
     forms:
       errors:
@@ -86,6 +92,7 @@ de:
             name_included_in_password: Das eingegebene Passwort ist zu ähnlich zu Ihrem Namen
             nickname_included_in_password: Das eingegebene Passwort ist zu ähnlich zu Ihrem Spitznamen
             not_enough_unique_characters: Das eingegebene Passwort hat nicht genug verschiedene Zeichen
+            password_blank: Sie haben kein Passwort eingegeben
             password_too_common: Das eingegebene Passwort ist sehr häufig - wir empfehlen ein anderes Passwort zu verwenden
             password_too_short: Das eingegebene Kennwort ist zu kurz
       shared:
@@ -99,3 +106,5 @@ de:
       signed_up_but_code_required: Eine Nachricht mit einem Code wurde an Ihre E-Mail-Adresse gesendet. Bitte kopieren und fügen Sie den empfangenen Code auf dieser Seite ein.
     registrations:
       signed_up_but_code_required: Eine Nachricht mit einem Code wurde an Ihre E-Mail-Adresse gesendet. Bitte kopieren und fügen Sie den empfangenen Code auf dieser Seite ein.
+  password_validator:
+    password_blank: muss angegeben werden

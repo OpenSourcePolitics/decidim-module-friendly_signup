@@ -4,11 +4,17 @@ ca:
     attributes:
       confirmation_code:
         code: Codi de confirmació
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: no pot estar en blanc
   decidim:
     forms:
       errors:
         decidim/user:
-          email: Please enter a valid email address
+          email: Si us plau, introduïu un correu electrònic vàlid
     friendly_signup:
       confirmation_code_form:
         expired: Aquest codi ha caducat, si us plau, genera un nou codi.
@@ -86,6 +92,7 @@ ca:
             name_included_in_password: La contrasenya que has introduït és massa similiar al teu nom
             nickname_included_in_password: La contrasenya que has introduït és massa similiar al teu àlies
             not_enough_unique_characters: La contrasenya que has introduït no té suficients càracters diferents
+            password_blank: Looks like you haven’t entered any password
             password_too_common: La contrasenya que has introduït és força comuna - et suggerim que utilitzis un de diferent
             password_too_short: La contrasenya que heu introduït és massa curta
       shared:
@@ -99,3 +106,5 @@ ca:
       signed_up_but_code_required: S'ha enviat un missatge amb el codi de confirmació a la teva adreça elecrònca. Si us plau, copia i enganxa el codi de confirmació en aquesta pàgina.
     registrations:
       signed_up_but_code_required: S'ha enviat un missatge amb el codi de confirmació a la teva adreça elecrònca. Si us plau, copia i enganxa el codi de confirmació en aquesta pàgina.
+  password_validator:
+    password_blank: no pot estar en blanc
