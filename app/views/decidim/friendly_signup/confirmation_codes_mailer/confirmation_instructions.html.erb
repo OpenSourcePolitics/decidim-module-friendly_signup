@@ -1,6 +1,6 @@
 <h1 class="text-center"><%= t(".title") %></h1>
 
-<p class="email-instructions text-center"><%= t(".subtitle", organization: link_to(@organization.name, decidim_friendly_signup.confirmation_codes_path(confirmation_token: @token))).html_safe %></p>
+<p class="email-instructions text-center"><%= t(".subtitle", organization: link_to(@organization.name, confirm_path_url)).html_safe %></p>
 
 <h3 class="email-instruction text-center" style="margin:1em 0 0.2em 0;"><%= t(".copy") %></h3>
 
