@@ -32,7 +32,7 @@ ca:
           title: L'últim pas...
           verify: Verifica
         mailer:
-          subject: "%{code} is your confirmation code for %{organization}"
+          subject: "%{code} és el codi de confirmació per %{organization}"
         resend_code:
           sent: El codi de confirmació s'ha enviat a %{email}.
       confirmation_codes_mailer:
@@ -92,7 +92,7 @@ ca:
             name_included_in_password: La contrasenya que has introduït és massa similiar al teu nom
             nickname_included_in_password: La contrasenya que has introduït és massa similiar al teu àlies
             not_enough_unique_characters: La contrasenya que has introduït no té suficients càracters diferents
-            password_blank: Looks like you haven’t entered any password
+            password_blank: Sembla que no has introduït cap contrasenya
             password_too_common: La contrasenya que has introduït és força comuna - et suggerim que utilitzis un de diferent
             password_too_short: La contrasenya que heu introduït és massa curta
       shared:
