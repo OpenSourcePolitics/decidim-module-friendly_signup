@@ -1,0 +1,110 @@
+---
+eu:
+  activemodel:
+    attributes:
+      confirmation_code:
+        code: Berresteko kodea
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: ezin da hutsik utzi
+  decidim:
+    forms:
+      errors:
+        decidim/user:
+          email: Mesedez, sartu helbide elektroniko baliodun bat
+    friendly_signup:
+      confirmation_code_form:
+        expired: Kode honek ez du balio, mesedez sortu berri bat.
+        invalid: Kode baliogabea, ziurtatu posta elektronikoz bidalitako azken kodea kopiatzen duzula.
+        invalid_token: Token baliogabea.
+      confirmation_codes:
+        create:
+          user_confirmed: Ongi etorri %{name}! Zure kontua behar bezala baieztatu da!
+        index:
+          code_not_received: Ez duzu kodea jaso?
+          confirm_send_code: 'Berrespen-kodea honi bidali nahi diozu: %{email}<br> Egiaztatu Spam karpeta, badaezpada!'
+          description: 4 zifrako kodea jaso beharko zenuke hemen:%{email}.< br>Aurkitzen ez baduzu, egiaztatu spam karpetak edo itxaron minutu batzuetan.
+          enter_code: Sartu kodea
+          subtitle: Zure helbide elektronikoa berretsi behar duzu proposamenak bidali, iruzkinak egin edo bozkatu aurretik.
+          title: Azken urrats bat, besterik ez...
+          verify: Egiaztatu
+        mailer:
+          subject: "%{organization} -rako zure berrespen-kodea %{code} da"
+        resend_code:
+          sent: 'Berrespen-mezu bat bidali da hona: %{email}.'
+      confirmation_codes_mailer:
+        confirmation_instructions:
+          copy: 'Kopiatu kode hau:'
+          expires_in: '%{time}-(et) an amaituko da.'
+          ignore: |-
+            Mezu hau sortu ez baduzu, mesedez, ez egin kasu mezu honi: <br/>
+            Zure kontua ez da aktibatuko baieztatuta ez badago.
+          subtitle: Erregistroa amaitzeko, jarraian agertzen den 4 digituko kodea kopiatu besterik ez duzu egin behar; gero, itzuli %{organization} erregistro-orrira eta gorde hor!
+          title: Ia egina duzu!
+      datetime:
+        distance_in_words:
+          about_x_hours:
+            one: ordubete inguru
+            other: '%{count} ordu inguru'
+          about_x_months:
+            one: hilabete inguru
+            other: '%{count} hilabete inguru'
+          about_x_years:
+            one: urtebete inguru
+            other: '%{count} urte inguru'
+          almost_x_years:
+            one: urtebete baino gehiago
+            other: '%{count} urte baino gehiago'
+          half_a_minute: minutu erdia
+          less_than_x_minutes:
+            one: minutu bat baino gutxiago
+            other: '%{count} minutu baino gutxiago'
+          less_than_x_seconds:
+            one: segundu bat baino gutxiago
+            other: '%{count} segundu baino gutxiago'
+          over_x_years:
+            one: urtebete baino gehiago
+            other: '%{count} urte baino gehiago'
+          x_days:
+            one: egun 1
+            other: "%{count} egun"
+          x_minutes:
+            one: minutu 1
+            other: "%{count} minutu"
+          x_months:
+            one: hilabete
+            other: "%{count} hilabete"
+          x_seconds:
+            one: segundu 1
+            other: "%{count} segundu"
+      errors:
+        messages:
+          blank: Badirudi ez duzula ezer sartu eremu honetan
+          email:
+            blank: Mesedez, sartu helbide elektroniko bat
+            invalid: Helbide elektronikoa osatu gabe dagoela dirudi
+            taken: Posta elektroniko hori beste kontu baterako erabiltzen da. Saiatu saioa hasten edo erabili beste mezu elektroniko bat
+          password:
+            email_included_in_password: Sartu duzun pasahitza zure posta elektronikoaren antzekoa da
+            name_included_in_password: Sartu duzun pasahitza zure izenaren antzekoa da
+            nickname_included_in_password: Sartu duzun pasahitza zure ezizenaren antzekoa da
+            not_enough_unique_characters: Sartu duzun pasahitzak ez du karaktere desberdin nahikorik
+            password_blank: Badirudi ez duzula pasahitzik sartu
+            password_too_common: Sartu duzun pasahitza oso arrunta da - beste pasahitz bat erabiltzea iradokitzen dizugu
+            password_too_short: Sartu duzun pasahitza laburregia da
+      shared:
+        password_fields:
+          hidden_password: Zure pasahitza ezkutatuta dago
+          hide_password: Ezkutatu pasahitza
+          show_password: Erakutsi pasahitza
+          shown_password: Zure pasahitza ikusgarri dago
+  devise:
+    confirmations:
+      signed_up_but_code_required: Kode bat duen mezu bat zure helbide elektronikora bidali da. Mesedez, kopiatu eta itsatsi orrialde honetan jasotako kodea.
+    registrations:
+      signed_up_but_code_required: Kode bat duen mezu bat zure helbide elektronikora bidali da. Mesedez, kopiatu eta itsatsi orrialde honetan jasotako kodea.
+  password_validator:
+    password_blank: ezin da hutsik utzi
