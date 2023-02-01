@@ -48,38 +48,38 @@ eu:
         distance_in_words:
           about_x_hours:
             one: ordubete inguru
-            other: about %{count} hours
+            other: '%{count} ordu inguru'
           about_x_months:
             one: hilabete inguru
-            other: about %{count} months
+            other: '%{count} hilabete inguru'
           about_x_years:
             one: urtebete inguru
-            other: about %{count} years
+            other: '%{count} urte inguru'
           almost_x_years:
             one: urtebete baino gehiago
-            other: almost %{count} years
+            other: '%{count} urte baino gehiago'
           half_a_minute: minutu erdia
           less_than_x_minutes:
             one: minutu bat baino gutxiago
-            other: less than %{count} minutes
+            other: '%{count} minutu baino gutxiago'
           less_than_x_seconds:
             one: segundu bat baino gutxiago
-            other: less than %{count} seconds
+            other: '%{count} segundu baino gutxiago'
           over_x_years:
             one: urtebete baino gehiago
-            other: over %{count} years
+            other: '%{count} urte baino gehiago'
           x_days:
             one: egun 1
-            other: "%{count} days"
+            other: "%{count} egun"
           x_minutes:
             one: minutu 1
-            other: "%{count} minutes"
+            other: "%{count} minutu"
           x_months:
             one: hilabete
-            other: "%{count} months"
+            other: "%{count} hilabete"
           x_seconds:
             one: segundu 1
-            other: "%{count} seconds"
+            other: "%{count} segundu"
       errors:
         messages:
           blank: Badirudi ez duzula ezer sartu eremu honetan
