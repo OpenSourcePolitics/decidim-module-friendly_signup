@@ -77,7 +77,6 @@ export default class InstantValidator {
   }
 
   addErrors($dest, msg) {
-    console.log("$dest", $dest, "%form", this.$form)
     if ($dest.closest("label").find(".form-error").length > 1) {
       // Decidim may add and additional error class that does not play well with abide
       $dest.closest("label").find(".form-error:last").remove();
