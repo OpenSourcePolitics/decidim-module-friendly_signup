@@ -22,6 +22,14 @@ module Decidim
         end
       end
 
+      protected
+
+      # since https://github.com/decidim/decidim/pull/9932
+      # it is required to override this method
+      def devise_mapping
+        ::Devise.mappings[:user]
+      end
+
       private
 
       def codes_confirmation_path(user)
