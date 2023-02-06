@@ -14,8 +14,8 @@ checksums = [
       "/app/views/decidim/devise/invitations/edit.html.erb" => "435073cbee6b4aaa18da7932e449e6bb",
       "/app/views/decidim/devise/sessions/new.html.erb" => "1da8569a34bcd014ffb5323c96391837",
       "/app/views/decidim/account/_password_fields.html.erb" => "1f0c1dfc65f96f258e6fad41af41c51a",
-      "/app/forms/decidim/registration_form.rb" => "28b7c6ea6f80fbc461b957f705d2d20b",
-      "/app/controllers/decidim/devise/registrations_controller.rb" => "abcc9270c6191f89d7b229e481b51e9a",
+      "/app/forms/decidim/registration_form.rb" => "32b55eb5a1742b6b8ed7bbb4c7643dc0",
+      "/app/controllers/decidim/devise/registrations_controller.rb" => "a98113386111645ec6e4a9e3144aca23",
       "/app/models/decidim/user.rb" => "4aff1b94255db5ffa8868a0f2876c14f"
     }
   }
