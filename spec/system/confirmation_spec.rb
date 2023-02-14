@@ -33,9 +33,11 @@ describe "Registration", type: :system do
   let(:confirmation_token) { user.confirmation_token }
   let(:email) { user.email }
   let(:code) { code_for(confirmation_token) }
+  let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
 
   before do
     allow(::Decidim::User).to receive(:confirm_within).and_return(10.minutes)
+    allow(Rails).to receive(:cache).and_return(memory_store)
     switch_to_host(organization.host)
   end
 
@@ -72,10 +74,8 @@ describe "Registration", type: :system do
 
   context "when post request gets attacked" do
     let(:code) { [1, 2, 3, 4] }
-    let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
 
     before do
-      allow(Rails).to receive(:cache).and_return(memory_store)
       visit decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token)
 
       5.times do
