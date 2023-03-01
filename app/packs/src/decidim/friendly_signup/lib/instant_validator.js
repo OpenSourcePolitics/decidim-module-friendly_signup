@@ -4,12 +4,15 @@
 // compatible with abide classes https://get.foundation/sites/docs/abide.html
 export default class InstantValidator {
   // ms before xhr check
+  get TIMEOUT() {
+    return 600;
+  }
 
   constructor($form) {
     this.$form = $form;
     this.$inputs = $form.find("[data-instant-attribute]");
     this.url = this.$form.data("validationUrl");
-    this.TIMEOUT = null;
+    this.timeoutId = null;
   }
 
   init() {
@@ -26,10 +29,10 @@ export default class InstantValidator {
     });
     this.$inputs.on("input", (evt) => {
       let $input = $(evt.currentTarget);
-      clearTimeout(this.TIMEOUT);
-      this.TIMEOUT = setTimeout(() => {
+      clearTimeout(this.timeoutId);
+      this.timeoutId = setTimeout(() => {
         this.validate($input);
-      }, 600);
+      }, this.TIMEOUT);
     });
   }
 
