@@ -33,9 +33,11 @@ describe "Registration", type: :system do
   let(:confirmation_token) { user.confirmation_token }
   let(:email) { user.email }
   let(:code) { code_for(confirmation_token) }
+  let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
 
   before do
     allow(::Decidim::User).to receive(:confirm_within).and_return(10.minutes)
+    allow(Rails).to receive(:cache).and_return(memory_store)
     switch_to_host(organization.host)
   end
 
@@ -71,21 +73,20 @@ describe "Registration", type: :system do
   end
 
   context "when post request gets attacked" do
-    let(:code) { 1234 }
-    let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
+    let(:code) { [1, 2, 3, 4] }
 
     before do
-      allow(Rails).to receive(:cache).and_return(memory_store)
       visit decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token)
 
-      6.times do
-        fill_confirmation_code(code)
+      5.times do
+        post decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token), params: { confirmation_numbers: code }
         sleep 0.1
       end
     end
 
     it "throttles after 5 attempts per minute" do
-      expect(page).to have_content("Retry later")
+      post decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token), params: { confirmation_numbers: code }
+      expect(response).to have_http_status(:too_many_requests)
     end
   end
 end
