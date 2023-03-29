@@ -4,14 +4,15 @@
 // compatible with abide classes https://get.foundation/sites/docs/abide.html
 export default class InstantValidator {
   // ms before xhr check
-  static get TIMEOUT() {
-    return 150;
+  get TIMEOUT() {
+    return 600;
   }
 
   constructor($form) {
     this.$form = $form;
     this.$inputs = $form.find("[data-instant-attribute]");
     this.url = this.$form.data("validationUrl");
+    this.timeoutId = null;
   }
 
   init() {
@@ -21,19 +22,17 @@ export default class InstantValidator {
     this.$form.foundation("disableValidation");
     // this final validation prevents abide from resetting the field when user loses focus
     this.$inputs.on("blur", (evt) => {
-      this.validate($(evt.currentTarget));
-    });
-    this.$inputs.on("keyup", (evt) => {
-      let $input = $(evt.currentTarget);
-      let checkTimeout = $input.data("checkTimeout");
-      // Trigger live validation with a delay to avoid throttling
-      if (checkTimeout) {
-        clearTimeout(checkTimeout);
+      // If it's empty (or not tampered), run the validation
+      if (this.value($(evt.target)) === "") {
+        this.validate($(evt.target));
       }
-      $input.data("checkTimeout", setTimeout(() => {
+    });
+    this.$inputs.on("input", (evt) => {
+      let $input = $(evt.currentTarget);
+      clearTimeout(this.timeoutId);
+      this.timeoutId = setTimeout(() => {
         this.validate($input);
-      }, this.TIMEOUT)
-      );
+      }, this.TIMEOUT);
     });
   }
 
@@ -81,7 +80,6 @@ export default class InstantValidator {
   }
 
   addErrors($dest, msg) {
-    console.log("$dest", $dest, "%form", this.$form)
     if ($dest.closest("label").find(".form-error").length > 1) {
       // Decidim may add and additional error class that does not play well with abide
       $dest.closest("label").find(".form-error:last").remove();

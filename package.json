@@ -188,7 +188,6 @@
     }
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-standard": "^11.0.0",
@@ -196,5 +195,6 @@
     "stylelint": "13.11.0"
   },
   "dependencies": {
+    "jquery": "^3.6.3"
   }
 }
