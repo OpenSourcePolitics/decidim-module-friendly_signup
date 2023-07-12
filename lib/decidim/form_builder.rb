@@ -421,7 +421,7 @@ module Decidim
       default_image_path = uploader_default_image_path(attribute)
       file_path = file_attachment_path(file)
 
-      if file_path.present? && file.attachment.image? || default_image_path.present?
+      if (file_path.present? && file.attachment.image?) || default_image_path.present?
         if file_path.present?
           template += @template.content_tag :label, I18n.t("current_image", scope: "decidim.forms")
           template += @template.link_to @template.image_tag(file_path, alt: alt_text), file_path, target: "_blank", rel: "noopener"
@@ -457,23 +457,19 @@ module Decidim
     def upload_help(attribute, options = {})
       humanizer = FileValidatorHumanizer.new(object, attribute)
 
-      help_scope = begin
-        if options[:help_i18n_scope].present?
-          options[:help_i18n_scope]
-        elsif humanizer.uploader.is_a?(Decidim::ImageUploader)
-          "decidim.forms.file_help.image"
-        else
-          "decidim.forms.file_help.file"
-        end
-      end
+      help_scope = if options[:help_i18n_scope].present?
+                     options[:help_i18n_scope]
+                   elsif humanizer.uploader.is_a?(Decidim::ImageUploader)
+                     "decidim.forms.file_help.image"
+                   else
+                     "decidim.forms.file_help.file"
+                   end
 
-      help_messages = begin
-        if options[:help_i18n_messages].present?
-          Array(options[:help_i18n_messages])
-        else
-          %w(message_1 message_2)
-        end
-      end
+      help_messages = if options[:help_i18n_messages].present?
+                        Array(options[:help_i18n_messages])
+                      else
+                        %w(message_1 message_2)
+                      end
 
       content_tag(:div, class: "help-text") do
         inner = "<p>#{I18n.t("explanation", scope: help_scope)}</p>".html_safe
@@ -647,7 +643,7 @@ module Decidim
     def find_validator(attribute, klass)
       return unless object.respond_to?(:_validators)
 
-      object._validators[attribute.to_sym].find { |validator| validator.class == klass }
+      object._validators[attribute.to_sym].find { |validator| validator.instance_of?(klass) }
     end
 
     # Private: Override method from FoundationRailsHelper to render the text of the
@@ -769,7 +765,7 @@ module Decidim
     end
 
     def required_for_attribute(attribute)
-      if attribute_required?(attribute) || (attribute == :password && object.class.name == "Decidim::RegistrationForm")
+      if attribute_required?(attribute) || (attribute == :password && object.instance_of?(Decidim::RegistrationForm))
         visible_title = content_tag(:span, "*", "aria-hidden": true)
         screenreader_title = content_tag(
           :span,

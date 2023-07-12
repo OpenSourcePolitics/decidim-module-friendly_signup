@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-core", Decidim::FriendlySignup::COMPAT_DECIDIM_VERSION
 
   s.add_development_dependency "decidim-dev", Decidim::FriendlySignup::COMPAT_DECIDIM_VERSION
+  s.metadata["rubygems_mfa_required"] = "true"
 end
