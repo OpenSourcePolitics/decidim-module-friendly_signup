@@ -9,6 +9,8 @@ module Decidim
       include Decidim::DeviseControllers
       include NeedsTosAccepted
 
+      helper Decidim::PasswordsHelper
+
       before_action :check_sign_up_enabled
       before_action :configure_permitted_parameters
 
@@ -58,6 +60,10 @@ module Decidim
       def build_resource(hash = nil)
         super(hash)
         resource.organization = current_organization
+      end
+
+      def devise_mapping
+        ::Devise.mappings[:user]
       end
     end
   end

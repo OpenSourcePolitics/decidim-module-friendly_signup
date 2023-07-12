@@ -11,6 +11,10 @@ fr:
             password:
               password_blank: doit être renseigné
   decidim:
+    devise:
+      registrations:
+        new:
+          password_help: "%{minimum_characters} caractères minimum, ne doit pas être trop commun (ex: 123456) et doit être différent de votre surnom et votre email."
     forms:
       errors:
         decidim/user:

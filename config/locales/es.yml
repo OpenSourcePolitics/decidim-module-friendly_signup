@@ -11,6 +11,10 @@ es:
             password:
               password_blank: no puede dejarse en blanco
   decidim:
+    devise:
+      registrations:
+        new:
+          password_help: "%{minimum_characters} caracteres como mínimo, no debe ser demasiado común (por ejemplo, 123456) y debe ser diferente de tu apodo y tu correo electrónico"
     forms:
       errors:
         decidim/user:
