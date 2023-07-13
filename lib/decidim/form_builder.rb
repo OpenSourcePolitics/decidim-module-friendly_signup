@@ -239,8 +239,8 @@ module Decidim
     def areas_select(name, collection, options = {}, html_options = {})
       selectables = if collection.first.is_a?(Decidim::Area)
                       assemblies = collection
-                                     .map { |a| [a.name[I18n.locale.to_s], a.id] }
-                                     .sort_by { |arr| arr[0] }
+                                   .map { |a| [a.name[I18n.locale.to_s], a.id] }
+                                   .sort_by { |arr| arr[0] }
 
                       @template.options_for_select(
                         assemblies,
@@ -270,8 +270,8 @@ module Decidim
     def resources_select(name, collection, options = {})
       resources =
         collection
-          .map { |r| [I18n.t(r.split("::").last.underscore, scope: "decidim.components.component_order_selector.order"), r] }
-          .sort
+        .map { |r| [I18n.t(r.split("::").last.underscore, scope: "decidim.components.component_order_selector.order"), r] }
+        .sort
 
       select(name, @template.options_for_select(resources, selected: options[:selected]), options)
     end
@@ -480,14 +480,14 @@ module Decidim
 
     def choose_button_label(attribute)
       @choose_button_label ||= begin
-                                 if resource_class(attribute).attached_config[attribute].uploader <= Decidim::ImageUploader
-                                   I18n.t("decidim.forms.upload.labels.add_image")
-                                 else
-                                   I18n.t("decidim.forms.upload.labels.add_file")
-                                 end
-                               rescue NoMethodError
-                                 I18n.t("decidim.forms.upload.labels.add_file")
-                               end
+        if resource_class(attribute).attached_config[attribute].uploader <= Decidim::ImageUploader
+          I18n.t("decidim.forms.upload.labels.add_image")
+        else
+          I18n.t("decidim.forms.upload.labels.add_file")
+        end
+      rescue NoMethodError
+        I18n.t("decidim.forms.upload.labels.add_file")
+      end
     end
 
     def upload_help(record, attribute, options = {})
@@ -623,19 +623,19 @@ module Decidim
     # Returns Boolean.
     def attribute_required?(attribute)
       validator = find_validator(attribute, ActiveModel::Validations::PresenceValidator) ||
-        find_validator(attribute, TranslatablePresenceValidator)
+                  find_validator(attribute, TranslatablePresenceValidator)
 
       return unless validator
 
       # Check if the if condition is present and it evaluates to true
       if_condition = validator.options[:if]
       validator_if_condition = if_condition.nil? ||
-        (string_or_symbol?(if_condition) ? object.send(if_condition) : if_condition.call(object))
+                               (string_or_symbol?(if_condition) ? object.send(if_condition) : if_condition.call(object))
 
       # Check if the unless condition is present and it evaluates to false
       unless_condition = validator.options[:unless]
       validator_unless_condition = unless_condition.nil? ||
-        (string_or_symbol?(unless_condition) ? !object.send(unless_condition) : !unless_condition.call(object))
+                                   (string_or_symbol?(unless_condition) ? !object.send(unless_condition) : !unless_condition.call(object))
 
       validator_if_condition && validator_unless_condition
     end
