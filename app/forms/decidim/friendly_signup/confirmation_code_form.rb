@@ -12,7 +12,7 @@ module Decidim
       validate :user_exists
 
       def user_code
-        code || confirmation_numbers.map(&:to_s).join("").to_i
+        code || confirmation_numbers.map(&:to_s).join.to_i
       end
 
       private

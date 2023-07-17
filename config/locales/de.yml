@@ -11,6 +11,10 @@ de:
             password:
               password_blank: muss angegeben werden
   decidim:
+    devise:
+      registrations:
+        new:
+          password_help: "%{minimum_characters} Zeichen Minimum, darf nicht zu häufig vorkommen (z.B. 123456) und muss sich von Ihrem Nickname und Ihrer E-Mail unterscheiden."
     forms:
       errors:
         decidim/user:
