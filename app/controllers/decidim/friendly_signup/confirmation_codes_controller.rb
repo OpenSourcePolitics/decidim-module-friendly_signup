@@ -7,7 +7,7 @@ module Decidim
       include NeedsHeaderSnippets
 
       before_action :require_unconfirmed_user
-      helper_method :user, :confirmation_form
+      helper_method :user, :confirmation_form, :stored_location_for
 
       def index; end
 
@@ -20,6 +20,10 @@ module Decidim
 
         flash.now[:alert] = confirmation_form.errors.messages.values.flatten.join(" ")
         render :index
+      end
+
+      def skip
+        sign_in_and_redirect user
       end
 
       private

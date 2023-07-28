@@ -36,6 +36,7 @@ en:
           description: You should receive a 4 digit code at %{email}.<br>If you can't
             find it, please check your spam folder or wait  up to 10 minutes.
           enter_code: Enter code
+          skip_confirmation: You can also participate during %{delay} days but you will have to confirm your email adress after this delay
           subtitle: You need to confirm your email address to be able to submit proposals,
             comment and vote.
           title: One last step...

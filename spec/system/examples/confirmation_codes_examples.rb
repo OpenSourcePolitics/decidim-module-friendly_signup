@@ -18,6 +18,25 @@ shared_examples "on/off confirmation codes" do
       expect(user.reload).to be_confirmed
     end
 
+    it "doesn't propose to skip the confirmation" do
+      expect(page).not_to have_content("You can also participate during")
+    end
+
+    context "when fast sign_up is activated" do
+      before do
+        Decidim.unconfirmed_access_for = 2.days
+        visit decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token)
+      end
+
+      it "let you skip the confirmation part" do
+        expect(page).to have_content("You can also participate during 2 days")
+
+        click_link "You can also participate during 2 days but you will have to confirm your email adress after this delay"
+
+        expect(user.reload).not_to be_confirmed
+      end
+    end
+
     context "when code is incorrect" do
       let(:code) { 1234 }
 
