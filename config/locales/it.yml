@@ -1,0 +1,110 @@
+---
+it:
+  activemodel:
+    attributes:
+      confirmation_code:
+        code: Confirmation code
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: can't be blank
+  decidim:
+    forms:
+      errors:
+        decidim/user:
+          email: Please enter a valid email address
+    friendly_signup:
+      confirmation_code_form:
+        expired: Sorry, this code has expired, please generate a new one.
+        invalid: Code is invalid, please make sure to copy the code emailed to you.
+        invalid_token: Invalid token.
+      confirmation_codes:
+        create:
+          user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
+        index:
+          code_not_received: Didn't receive the code?
+          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
+          description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
+          enter_code: Enter code
+          subtitle: You need to confirm your email address to be able to submit proposals, comment and vote.
+          title: One last step...
+          verify: Verify
+        mailer:
+          subject: "%{code} is your confirmation code for %{organization}"
+        resend_code:
+          sent: The confirmation code has been sent to %{email}.
+      confirmation_codes_mailer:
+        confirmation_instructions:
+          copy: 'Copy this code:'
+          expires_in: It will expire in %{time}.
+          ignore: |-
+            If you didn't request this comunication, please ignore this email.<br />
+            Your account won't be active until your account is fully confirmed.
+          subtitle: To finalize the registration you just need to copy the 4 digit code below, go back to the %{organization} signup page and paste it!
+          title: You're almost there!
+      datetime:
+        distance_in_words:
+          about_x_hours:
+            one: about 1 hour
+            other: about %{count} hours
+          about_x_months:
+            one: about 1 month
+            other: about %{count} months
+          about_x_years:
+            one: about 1 year
+            other: about %{count} years
+          almost_x_years:
+            one: almost 1 year
+            other: almost %{count} years
+          half_a_minute: half a minute
+          less_than_x_minutes:
+            one: less than a minute
+            other: less than %{count} minutes
+          less_than_x_seconds:
+            one: less than 1 second
+            other: less than %{count} seconds
+          over_x_years:
+            one: over 1 year
+            other: over %{count} years
+          x_days:
+            one: 1 day
+            other: "%{count} days"
+          x_minutes:
+            one: 1 minute
+            other: "%{count} minutes"
+          x_months:
+            one: 1 month
+            other: "%{count} months"
+          x_seconds:
+            one: 1 second
+            other: "%{count} seconds"
+      errors:
+        messages:
+          blank: Looks like you haven’t entered anything in this field
+          email:
+            blank: Please enter an email address
+            invalid: The email address looks incomplete
+            taken: This email is already in use for another account. Try signing in or use another email
+          password:
+            email_included_in_password: The password you have entered is too similar to your email
+            name_included_in_password: The password you have entered is too similar to your name
+            nickname_included_in_password: The password you have entered is too similar to your nickname
+            not_enough_unique_characters: The password you have entered does not have enough different characters
+            password_blank: Looks like you haven’t entered any password
+            password_too_common: The password you have entered is very common - we suggest using a different password
+            password_too_short: The password you have entered is too short
+      shared:
+        password_fields:
+          hidden_password: Your password is hidden
+          hide_password: Hide password
+          show_password: Show password
+          shown_password: Your password is shown
+  devise:
+    confirmations:
+      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+    registrations:
+      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
+  password_validator:
+    password_blank: can't be blank
