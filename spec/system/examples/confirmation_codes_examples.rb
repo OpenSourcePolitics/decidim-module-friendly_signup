@@ -24,16 +24,60 @@ shared_examples "on/off confirmation codes" do
 
     context "when fast sign_up is activated" do
       before do
-        Decidim.unconfirmed_access_for = 2.days
+        # Mock the value of unconfirmed_access_for to 2 days
+        allow(Decidim).to receive(:unconfirmed_access_for).and_return(2.days)
+
+        # Mock the user's active_for_authentication? to always return true
+        allow_any_instance_of(Decidim::User).to receive(:active_for_authentication?).and_return(true) # rubocop:disable RSpec/AnyInstance
+
+        # Visit the confirmation_codes_path with a confirmation token
         visit decidim_friendly_signup.confirmation_codes_path(confirmation_token: confirmation_token)
       end
 
-      it "let you skip the confirmation part" do
+      it "lets you skip the confirmation part" do
         expect(page).to have_content("You can also participate during 2 days")
 
-        click_link "You can also participate during 2 days but you will have to confirm your email adress after this delay"
+        click_link "You can also participate during 2 days"
 
         expect(user.reload).not_to be_confirmed
+      end
+
+      context "when we come to the end of the 2 days period" do
+        before do
+          click_link "You can also participate during 2 days"
+
+          travel_to 3.days.from_now
+
+          allow_any_instance_of(Decidim::User).to receive(:active_for_authentication?).and_return(false) # rubocop:disable RSpec/AnyInstance
+        end
+
+        it "redirects you to the confirmation_page after two days" do
+          click_link user.name.to_s
+          click_link "Sign out"
+
+          expect(page).to have_content("Sign In")
+
+          click_link "Sign In"
+
+          fill_in "Email", with: user.email
+          fill_in "Password", with: user.password
+
+          click_button "Log in"
+
+          expect(page).to have_content("Sorry, this code has expired, please generate a new one.")
+
+          fill_in "Email", with: user.email
+
+          click_button "Resend confirmation instructions"
+
+          expect(page).to have_content("You should receive a 4 digit code at #{user.email}")
+
+          expect(page).not_to have_content("You can also participate during 2 days")
+
+          within_flash_messages do
+            expect(page).to have_content("A message with a code has been sent to your email address. Please copy and paste the received code in this page.")
+          end
+        end
       end
     end
 

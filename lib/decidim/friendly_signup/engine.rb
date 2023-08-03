@@ -33,7 +33,6 @@ module Decidim
         Decidim::AccountController.include(Decidim::FriendlySignup::NeedsHeaderSnippets)
         Decidim::RegistrationForm.include(Decidim::FriendlySignup::AutoNickname)
         Decidim::User.include(Decidim::FriendlySignup::NeedsRegistrationCodes)
-        #TODO: Make this work
         ::Devise::FailureApp.include(Decidim::FriendlySignup::ConfirmationRedirect)
       end
 
