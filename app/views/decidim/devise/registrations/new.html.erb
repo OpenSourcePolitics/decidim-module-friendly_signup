@@ -50,7 +50,7 @@
               <%= f.email_field :email, autocomplete: "email", data: { "instant-attribute" => "email", "instant-recheck" => "#registration_user_password" } %>
             </div>
 
-            <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { required: true, help_text: t(".password_help", minimun_characters: ::PasswordValidator::MINIMUM_LENGTH), autocomplete: "off", data: { "instant-attribute" => "password" } }) %>
+            <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { required: true, help_text: t(".password_help", minimum_characters: ::PasswordValidator::MINIMUM_LENGTH), autocomplete: "off", data: { "instant-attribute" => "password" } }) %>
           </div>
         </div>
 

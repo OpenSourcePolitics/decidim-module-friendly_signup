@@ -62,7 +62,7 @@ module Decidim::FriendlySignup
       it { is_expected.to be_invalid }
 
       context "and confirmation_numbers are correct" do
-        let(:confirmation_numbers) { generate_code(confirmation_token).to_s.split("") }
+        let(:confirmation_numbers) { generate_code(confirmation_token).to_s.chars }
 
         it { is_expected.to be_valid }
       end

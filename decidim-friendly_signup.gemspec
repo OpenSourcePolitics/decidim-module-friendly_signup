@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = ["ivan@pokecode.net"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/decidim/decidim-module-friendly_signup"
-  s.required_ruby_version = ">= 2.7"
+  s.required_ruby_version = ">= 3.0"
 
   s.name = "decidim-friendly_signup"
   s.summary = "A decidim friendly_signup module"
@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-core", Decidim::FriendlySignup::COMPAT_DECIDIM_VERSION
 
   s.add_development_dependency "decidim-dev", Decidim::FriendlySignup::COMPAT_DECIDIM_VERSION
+  s.metadata["rubygems_mfa_required"] = "true"
 end
