@@ -11,6 +11,10 @@ eu:
             password:
               password_blank: ezin da hutsik utzi
   decidim:
+    devise:
+      registrations:
+        new:
+          password_help: "%{minimum_characters} karaktere gutxienez, ez dira oso ohikoak izan behar (adibidez, 123456) eta zure goitizenetik eta zure helbide elektronikoarekin desberdinak izan behar dira."
     forms:
       errors:
         decidim/user:
