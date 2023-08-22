@@ -14,7 +14,7 @@ lt:
     devise:
       registrations:
         new:
-          password_help: "%{minimum_characters} karaktere gutxienez, ez dira oso ohikoak izan behar (adibidez, 123456) eta zure goitizenetik eta zure helbide elektronikoarekin desberdinak izan behar dira."
+          password_help: "Mažiausiai %{minimum_characters} simboliai, jie neturėtų būti per dažni (pavyzdžiui, 123456) ir turi skirtis nuo jūsų slapyvardžio ir elektroninio pašto adreso."
     forms:
       errors:
         decidim/user:
@@ -132,4 +132,4 @@ lt:
     registrations:
       signed_up_but_code_required: El. laiškas su kodu buvo išsiųstas į Jūsų el. paštą. Prašau nukopijuokite ir įklijuokite gautą kodą.
   password_validator:
-    password_blank: can't be blank
+    password_blank: negali būti tuščia
