@@ -33,10 +33,10 @@
               <%= decidim_form_for(resource, namespace: "session", as: resource_name, url: session_path(resource_name), html: { class: "register-form new_user" }) do |f| %>
                 <div>
                   <div class="field">
-                    <%= f.email_field :email, required: true, pattern: "email" %>
+                    <%= f.email_field :email, autocomplete: "email", required: true, pattern: "email" %>
                   </div>
                   <div class="field">
-                    <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { autocomplete: "off" }, skip_confirmation: true) %>
+                    <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { autocomplete: "current-password" }, skip_confirmation: true) %>
                   </div>
                 </div>
                   <% if devise_mapping.rememberable? %>
