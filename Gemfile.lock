@@ -133,8 +133,6 @@ GEM
     chef-utils (18.2.7)
       concurrent-ruby
     childprocess (4.1.0)
-    codecov (0.6.0)
-      simplecov (>= 0.15, < 0.22)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (5.0.0)
@@ -803,7 +801,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (~> 1.4)
   byebug (~> 11.0)
-  codecov
   decidim (= 0.27.4)
   decidim-dev (= 0.27.4)
   decidim-friendly_signup!
