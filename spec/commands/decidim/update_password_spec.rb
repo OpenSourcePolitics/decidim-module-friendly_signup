@@ -8,7 +8,7 @@ module Decidim
     let(:user) { create(:user, :confirmed, password_updated_at: 1.week.ago) }
     let(:password) { "updatedP4ssw0rd123456789" }
     let(:password_confirmation) { "updatedP4ssw0rd123456789" }
-    let(:form) { Decidim::PasswordForm.from_params(password: "updatedP4ssw0rd123456789", password_confirmation: "updatedP4ssw0rd123456789") }
+    let(:form) { Decidim::PasswordForm.from_params(password: password, password_confirmation: password_confirmation) }
 
     context "when invalid" do
       let(:password_confirmation) { "foo" }
