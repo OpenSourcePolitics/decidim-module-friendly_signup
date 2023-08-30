@@ -508,6 +508,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.14.5-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.5-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.5-x86_64-linux)
@@ -794,6 +796,7 @@ GEM
     zeitwerk (2.6.11)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-20
   x86_64-linux
 
@@ -817,4 +820,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.3.19
+   2.4.9
