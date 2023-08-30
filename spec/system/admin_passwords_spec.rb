@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe "Admin passwords", type: :system do
   let(:organization) { create(:organization) }
-  let!(:user) { create(:user, :confirmed, :admin, password: password, password_updated_at: password_updated_at, organization: organization) }
+  let(:user) { create(:user, :confirmed, :admin, password: password, password_updated_at: password_updated_at, organization: organization) }
   let(:password) { "decidim123456789" }
   let(:new_password) { "decidim987654321" }
   let(:password_updated_at) { nil }
@@ -18,7 +18,7 @@ describe "Admin passwords", type: :system do
     let(:password_updated_at) { nil }
 
     it "can update password successfully" do
-      login_as user, scope: :user
+      manual_login(user.email, password)
       expect(page).to have_content("Admin users need to change their password every 90 days")
       expect(page).to have_content("Password change")
       fill_in :password_user_password, with: new_password
@@ -29,7 +29,7 @@ describe "Admin passwords", type: :system do
     end
 
     it "cannot dismiss password change" do
-      login_as user, scope: :user
+      manual_login(user.email, password)
       expect(page).to have_content("Password change")
       click_link "user-menu-control"
       click_link "Admin dashboard"
@@ -44,7 +44,7 @@ describe "Admin passwords", type: :system do
       end
 
       it "redirects to original path after password update" do
-        login_as user, scope: :user
+        manual_login(user.email, password)
         expect(page).to have_content("Password change")
         fill_in :password_user_password, with: new_password
         click_button "Change my password"
@@ -58,8 +58,15 @@ describe "Admin passwords", type: :system do
     let(:password_updated_at) { 91.days.ago }
 
     it "redirects to edit password view" do
-      login_as user, scope: :user
+      manual_login(user.email, password)
       expect(page).to have_content("Password change")
     end
+  end
+
+  def manual_login(email, password)
+    click_link "Sign In"
+    fill_in :session_user_email, with: email
+    fill_in :session_user_password, with: password
+    click_button "Log in"
   end
 end
