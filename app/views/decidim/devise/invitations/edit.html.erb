@@ -22,13 +22,13 @@
             <% unless friendly_override_activated?(:hide_nickname) %>
               <div class="user-nickname">
                 <div class="field">
-                  <%= f.text_field :nickname, help_text: t("devise.invitations.edit.nickname_help", organization: current_organization.name), required: "required", prefix: { value: "@", small: 1, large: 1 }, data: { "instant-attribute" => "nickname", "instant-recheck" => "password" } %>
+                  <%= f.text_field :nickname, help_text: t("devise.invitations.edit.nickname_help", organization: current_organization.name), required: "required", prefix: { value: "@", small: 1, large: 1 }, autocomplete: "nickname", data: { "instant-attribute" => "nickname", "instant-recheck" => "password" } %>
                 </div>
               </div>
             <% end %>
 
             <% if f.object.class.require_password_on_accepting %>
-              <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { required: true, autocomplete: "off", help_text: t("devise.passwords.edit.password_help", minimun_characters: ::PasswordValidator::MINIMUM_LENGTH), minlength: ::PasswordValidator::MINIMUM_LENGTH, maxlength: ::PasswordValidator::MAX_LENGTH, data: { "instant-attribute" => "password" } }) %>
+              <%= render("decidim/friendly_signup/shared/password_fields", form: f, options:  password_field_options_for(:user).except(:help_text).merge(data: { "instant-attribute" => "password" })) %>
             <% end %>
           </div>
         </div>
