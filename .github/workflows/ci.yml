@@ -8,7 +8,7 @@ env:
   CODECOV: 1
 
 jobs:
-  lint-report:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
         name: Lint Ruby files
       - run: bundle exec erblint app/**/*.erb
         name: Lint ERB files
-  test-report:
+  tests:
     runs-on: ubuntu-latest
 
     services:
@@ -69,7 +69,7 @@ jobs:
         with:
           name: screenshots
           path: ./spec/decidim_dummy_app/tmp/screenshots
-  system-test-report:
+  system-tests:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -108,7 +108,7 @@ jobs:
           path: ./spec/decidim_dummy_app/tmp/screenshots
   release:
     if: "github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'"
-    needs: [tests, lint]
+    needs: [lint, tests, system-tests]
     runs-on: ubuntu-latest
     steps:
       - name: Publish gem
