@@ -13,17 +13,17 @@ module Decidim
     end
 
     it "has a version number" do
-      expect(described_class::VERSION).not_to be nil
+      expect(described_class::VERSION).not_to be_nil
       expect(described_class::VERSION).to eq(gemspec.version.to_s)
     end
 
     it "has a decidim version number for development" do
-      expect(described_class::DECIDIM_VERSION).not_to be nil
+      expect(described_class::DECIDIM_VERSION).not_to be_nil
       expect(described_class::DECIDIM_VERSION).to eq(gemspec("decidim").version.to_s)
     end
 
     it "has a compatible-decidim version number" do
-      expect(described_class::COMPAT_DECIDIM_VERSION).not_to be nil
+      expect(described_class::COMPAT_DECIDIM_VERSION).not_to be_nil
       gemspec.dependencies.each do |spec|
         expect(spec.requirements_list.first).to eq(described_class::COMPAT_DECIDIM_VERSION)
       end

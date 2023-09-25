@@ -9,14 +9,14 @@ checksums = [
   {
     package: "decidim-core",
     files: {
-      "/app/views/decidim/devise/registrations/new.html.erb" => "a5c41982216b2a22b90816e66cb8286b",
-      "/app/views/decidim/devise/passwords/edit.html.erb" => "ea44db0114e1c201cc0f490b4899b8a8",
-      "/app/views/decidim/devise/invitations/edit.html.erb" => "435073cbee6b4aaa18da7932e449e6bb",
-      "/app/views/decidim/devise/sessions/new.html.erb" => "1da8569a34bcd014ffb5323c96391837",
-      "/app/views/decidim/account/_password_fields.html.erb" => "1f0c1dfc65f96f258e6fad41af41c51a",
+      "/app/views/decidim/devise/registrations/new.html.erb" => "5f6f15330839fa55697c4e272767a090",
+      "/app/views/decidim/devise/passwords/edit.html.erb" => "d952fc96b7e00f1df19ff4f2af735932",
+      "/app/views/decidim/devise/invitations/edit.html.erb" => "e5762f86c0125adc6339400e1796216a",
+      "/app/views/decidim/devise/sessions/new.html.erb" => "9d090fc9e565ded80a9330d4e36e495c",
+      "/app/views/decidim/account/_password_fields.html.erb" => "fddb4c742840dac1fb56d02ea959c3f6",
       "/app/forms/decidim/registration_form.rb" => "32b55eb5a1742b6b8ed7bbb4c7643dc0",
-      "/app/controllers/decidim/devise/registrations_controller.rb" => "a98113386111645ec6e4a9e3144aca23",
-      "/app/models/decidim/user.rb" => "4aff1b94255db5ffa8868a0f2876c14f"
+      "/app/controllers/decidim/devise/registrations_controller.rb" => "315c5b3865ecad9d647b4da98057407f",
+      "/app/models/decidim/user.rb" => "3d57a7c9130a91d44e1acd7475877b87"
     }
   }
 ]

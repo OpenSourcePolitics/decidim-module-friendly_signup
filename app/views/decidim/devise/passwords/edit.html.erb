@@ -1,31 +1,31 @@
 <div class="wrapper">
-<div class="row collapse">
   <div class="row collapse">
-    <div class="columns large-8 large-centered text-center page-title">
-      <h1><%= t("devise.passwords.edit.change_your_password") %></h1>
+    <div class="row collapse">
+      <div class="columns large-8 large-centered text-center page-title">
+        <h1><%= t("devise.passwords.edit.title") %></h1>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="columns medium-7 large-5 medium-centered">
-      <div class="card">
-        <div class="card__content">
-          <%= decidim_form_for(resource, namespace: "password", as: resource_name, url: password_path(resource_name), html: { method: :put, class: "register-form new_user#{friendly_override_activated?(:use_instant_validation) ? ' instant-validation' : ''}" } , data: { "validation-url" => decidim_friendly_signup.validate_path }) do |f| %>
-            <%= form_required_explanation %>
+    <div class="row">
+      <div class="columns medium-7 large-5 medium-centered">
+        <div class="card">
+          <div class="card__content">
+            <%= decidim_form_for(resource, namespace: "password", as: resource_name, url: @send_path || password_path(resource_name), html: { method: :put, class: "register-form new_user#{friendly_override_activated?(:use_instant_validation) ? ' instant-validation' : ''}" }, data: { "validation-url" => decidim_friendly_signup.validate_path }) do |f| %>
+              <%= form_required_explanation %>
 
-            <%= f.hidden_field :reset_password_token %>
+              <%= f.hidden_field :reset_password_token %>
 
-            <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: { required: true, autocomplete: "off", help_text: t("devise.passwords.edit.password_help", minimun_characters: ::PasswordValidator::MINIMUM_LENGTH), minlength: ::PasswordValidator::MINIMUM_LENGTH, maxlength: ::PasswordValidator::MAX_LENGTH, data: { "instant-attribute" => "password" } }) %>
+              <%= render("decidim/friendly_signup/shared/password_fields", form: f, options: password_field_options_for(current_user || params["reset_password_token"]).merge(data: { "instant-attribute" => "password" })) %>
 
-            <div class="actions">
-              <%= f.submit t("devise.passwords.edit.change_my_password"), class: "button expanded" %>
-            </div>
-          <% end %>
+              <div class="actions">
+                <%= f.submit t("devise.passwords.edit.change_my_password"), class: "button expanded" %>
+              </div>
+            <% end %>
 
-          <%= render "decidim/devise/shared/links" %>
+            <%= render "decidim/devise/shared/links" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
