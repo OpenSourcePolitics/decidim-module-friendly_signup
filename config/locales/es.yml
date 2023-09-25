@@ -14,7 +14,7 @@ es:
     devise:
       registrations:
         new:
-          password_help: "%{minimum_characters} caracteres como mínimo, no debe ser demasiado común (por ejemplo, 123456) y debe ser diferente de tu apodo y tu correo electrónico"
+          password_help: "%{minimum_characters} karaktere gutxienez, ez dira oso ohikoak izan behar (adibidez, 123456) eta zure goitizenetik eta zure helbide elektronikoarekin desberdinak izan behar dira."
     forms:
       errors:
         decidim/user:
