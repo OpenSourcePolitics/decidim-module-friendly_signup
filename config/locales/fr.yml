@@ -32,6 +32,7 @@ fr:
           confirm_send_code: Voulez-vous renvoyer un code de confirmation à %{email} ?<br>Vérifiez le dossier spam au cas où !
           description: Vous devriez recevoir un code à 4 chiffres à %{email}.<br>Si vous ne le trouvez pas, vérifiez votre dossier spam ou attendez 10 minutes.
           enter_code: Saisissez le code
+          skip_confirmation: Vous pouvez participer pendant %{delay} jours mais vous devrez confirmer votre adresse mail passé ce délai.
           subtitle: Vous devez confirmer votre adresse e-mail pour pouvoir soumettre des propositions, commenter et voter.
           title: Une dernière étape...
           verify: Vérifier
