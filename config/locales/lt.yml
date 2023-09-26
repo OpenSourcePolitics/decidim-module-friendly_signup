@@ -14,7 +14,7 @@ lt:
     devise:
       registrations:
         new:
-          password_help: "%{minimun_characters} characters minimum, must not be too common (e.g. 123456) and must be different from your nickname and your email."
+          password_help: "%{minimum_characters} minimalus rašmenų skaičius, rašmenys neturi būti pernelyg įprasti (pvz., 123456) ir turi skirtis nuo jūsų naudotojo vardo ir e. pašto adreso."
     forms:
       errors:
         decidim/user:
