@@ -14,7 +14,7 @@ ca:
     devise:
       registrations:
         new:
-          password_help: "%{minimum_characters} caracters com a mínim, no ha de ser massa comú (per exemple, 123456) i ha de ser diferent del vostre apòstol i el vostre correu electrònic."
+          password_help: "%{minimun_characters} characters minimum, must not be too common (e.g. 123456) and must be different from your nickname and your email."
     forms:
       errors:
         decidim/user:
