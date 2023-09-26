@@ -14,7 +14,7 @@ en:
     devise:
       registrations:
         new:
-          password_help: "%{minimun_characters} characters minimum, must not be too
+          password_help: "%{minimum_characters} characters minimum, must not be too
             common (e.g. 123456) and must be different from your nickname and your
             email."
     forms:
