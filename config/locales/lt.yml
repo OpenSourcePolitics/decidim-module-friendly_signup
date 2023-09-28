@@ -1,0 +1,135 @@
+---
+lt:
+  activemodel:
+    attributes:
+      confirmation_code:
+        code: Patvirtinimo kodas
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_blank: negali būti tuščia
+  decidim:
+    devise:
+      registrations:
+        new:
+          password_help: "Mažiausiai %{minimum_characters} simboliai, jie neturėtų būti per dažni (pavyzdžiui, 123456) ir turi skirtis nuo jūsų slapyvardžio ir elektroninio pašto adreso."
+    forms:
+      errors:
+        decidim/user:
+          email: Prašome įvesti tinkamą el. pašto adresą
+    friendly_signup:
+      confirmation_code_form:
+        expired: Kodas išėjo iš galiojimo, prašome išsiųsti naują.
+        invalid: Kodas neteisingas, įsitikinkite, kad įvedėte el. paštu gautą kodą.
+        invalid_token: Neteisingas kodas.
+      confirmation_codes:
+        create:
+          user_confirmed: Sveiki %{name}! Jūsų paskyra patvirtinta sėkmingai!
+        index:
+          code_not_received: Negavote kodo?
+          confirm_send_code: Ar norite iš naujo išsiųsti patvirtinimo kodą į %{email}?<br>Įsitikinkite, kad laiškas neatsidūrė "šlamšto" aplanke
+          description: Išsiuntėme 4 skaitmenų kodą adresu %{email}<br>Jei jo nerandate, patikrinkite "šlamšto" aplanką arba luktelkite keletą minučių.
+          enter_code: Įveskite kodą
+          subtitle: Turite patvirtinti savo el. pašto adresą norėdami teikti pasiūlymus, komentuoti ir balsuoti.
+          title: Paskutinis žingsnis
+          verify: Patikrinti
+        mailer:
+          subject: "%{code} yra Jūsų %{organization} patvirtinimo kodas"
+        resend_code:
+          sent: Patvirtinimo kodas buvo išsiųstas į %{email}.
+      confirmation_codes_mailer:
+        confirmation_instructions:
+          copy: 'Nukopijuokite šį kodą:'
+          expires_in: Kodas išeis iš galiojimo už %{time}.
+          ignore: |-
+            Jei nesiregistravote platformoje, ignoruokite šį el. laišką.<br />Jūsų paskyra nebus aktyvuota kol ji nebus pilnai patvirtinta.
+          subtitle: Norėdami užbaigti registraciją, tiesiog nukopijuokite žemiau esantį 4 skaitmenų kodą, grįžkite į %{organization} registracijos puslapį ir įklijuokite jį.
+          title: Registracija beveik baigta!
+      datetime:
+        distance_in_words:
+          about_x_hours:
+            one: apie 1 valandą
+            few: apie %{count} valandas
+            many: apie %{count} valandų
+            other: apie %{count} valandų
+          about_x_months:
+            one: apie 1 mėnesio
+            few: apie %{count} mėnesių
+            many: apie %{count} mėnesių
+            other: apie %{count} mėnesių
+          about_x_years:
+            one: apie 1 metų
+            few: apie %{count} metų
+            many: apie %{count} metų
+            other: apie %{count} metų
+          almost_x_years:
+            one: beveik 1 metai
+            few: beveik %{count} metai
+            many: beveik %{count} metai
+            other: beveik %{count} metai
+          half_a_minute: pusė minutės
+          less_than_x_minutes:
+            one: mažiau nei per minutę
+            few: mažiau nei %{count} minutes
+            many: mažiau nei %{count} minutes
+            other: mažiau nei %{count} minutes
+          less_than_x_seconds:
+            one: mažiau nei 1 sekundę
+            few: mažiau nei %{count} sek.
+            many: mažiau nei %{count} sek.
+            other: mažiau nei %{count} sek.
+          over_x_years:
+            one: daugiau nei 1 metus
+            few: daugiau nei %{count} metus
+            many: daugiau nei %{count} metus
+            other: daugiau nei %{count} metus
+          x_days:
+            one: 1 d.
+            few: "%{count} dienos"
+            many: "%{count} dienos"
+            other: "%{count} dienos"
+          x_minutes:
+            one: 1 min.
+            few: "%{count} minutės"
+            many: "%{count} minutės"
+            other: "%{count} minutės"
+          x_months:
+            one: 1 mėnuo
+            few: "%{count} mėnesiai"
+            many: "%{count} mėnesiai"
+            other: "%{count} mėnesiai"
+          x_seconds:
+            one: 1 sekundė
+            few: "%{count} sekundės"
+            many: "%{count} sekundės"
+            other: "%{count} sekundės"
+      errors:
+        messages:
+          blank: Rodos, kad nieko neįvedėte į šį lauką
+          email:
+            blank: Prašome įvesti el. pašto adresą
+            invalid: El. pašto adresas atrodo nepilnas
+            taken: El. paštas jau naudojamas kitai paskyrai. Prisijunkite arba naudokite kitą el. pašto adresą.
+          password:
+            email_included_in_password: Slaptažodis kurį įvedėte pernelyg panašus į Jūsų el. paštą
+            name_included_in_password: Slaptažodis kurį įvedėte pernelyg panašus į Jūsų vardą
+            nickname_included_in_password: Slaptažodis kurį įvedėte pernelyg panašus į Jūsų slapyvardį
+            not_enough_unique_characters: Slaptažodis kurį įvedėte per trumpas
+            password_blank: Rodos neįvedėte jokio slaptažodžio
+            password_too_common: Slaptažodis kurį įvedėti labai dažnas. Siūlome naudoti unikalesnį slaptažodį.
+            password_too_short: Slaptažodis, kurį įvedėte - per trumpas.
+      shared:
+        password_fields:
+          hidden_password: Slaptažodis paslėptas
+          hide_password: Slėpti slaptažodį
+          show_password: Rodyti slaptažodį
+          shown_password: Slaptažodis rodomas
+  devise:
+    confirmations:
+      signed_up_but_code_required: El. laiškas su kodu buvo išsiųstas į Jūsų el. paštą. Prašau nukopijuokite ir įklijuokite gautą kodą.
+    registrations:
+      signed_up_but_code_required: El. laiškas su kodu buvo išsiųstas į Jūsų el. paštą. Prašau nukopijuokite ir įklijuokite gautą kodą.
+  password_validator:
+    password_blank: negali būti tuščia

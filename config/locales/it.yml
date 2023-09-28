@@ -1,5 +1,5 @@
 ---
-en:
+it:
   activemodel:
     attributes:
       confirmation_code:
@@ -14,9 +14,7 @@ en:
     devise:
       registrations:
         new:
-          password_help: "%{minimum_characters} characters minimum, must not be too
-            common (e.g. 123456) and must be different from your nickname and your
-            email."
+          password_help: "%{minimum_characters} karaktere gutxienez, ez dira oso ohikoak izan behar (adibidez, 123456) eta zure goitizenetik eta zure helbide elektronikoarekin desberdinak izan behar dira."
     forms:
       errors:
         decidim/user:
@@ -31,15 +29,10 @@ en:
           user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
         index:
           code_not_received: Didn't receive the code?
-          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be
-            sure to check the spam folder just in case!
-          description: You should receive a 4 digit code at %{email}.<br>If you can't
-            find it, please check your spam folder or wait  up to 10 minutes.
+          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
+          description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
           enter_code: Enter code
-          skip_confirmation: You can also participate during %{delay} days but you
-            will have to confirm your email adress after this delay
-          subtitle: You need to confirm your email address to be able to submit proposals,
-            comment and vote.
+          subtitle: You need to confirm your email address to be able to submit proposals, comment and vote.
           title: One last step...
           verify: Verify
         mailer:
@@ -53,8 +46,7 @@ en:
           ignore: |-
             If you didn't request this comunication, please ignore this email.<br />
             Your account won't be active until your account is fully confirmed.
-          subtitle: To finalize the registration you just need to copy the 4 digit
-            code below, go back to the %{organization} signup page and paste it!
+          subtitle: To finalize the registration you just need to copy the 4 digit code below, go back to the %{organization} signup page and paste it!
           title: You're almost there!
       datetime:
         distance_in_words:
@@ -98,20 +90,14 @@ en:
           email:
             blank: Please enter an email address
             invalid: The email address looks incomplete
-            taken: This email is already in use for another account. Try signing in
-              or use another email
+            taken: This email is already in use for another account. Try signing in or use another email
           password:
-            email_included_in_password: The password you have entered is too similar
-              to your email
-            name_included_in_password: The password you have entered is too similar
-              to your name
-            nickname_included_in_password: The password you have entered is too similar
-              to your nickname
-            not_enough_unique_characters: The password you have entered does not have
-              enough different characters
+            email_included_in_password: The password you have entered is too similar to your email
+            name_included_in_password: The password you have entered is too similar to your name
+            nickname_included_in_password: The password you have entered is too similar to your nickname
+            not_enough_unique_characters: The password you have entered does not have enough different characters
             password_blank: Looks like you haven’t entered any password
-            password_too_common: The password you have entered is very common - we
-              suggest using a different password
+            password_too_common: The password you have entered is very common - we suggest using a different password
             password_too_short: The password you have entered is too short
       shared:
         password_fields:
@@ -121,10 +107,8 @@ en:
           shown_password: Your password is shown
   devise:
     confirmations:
-      signed_up_but_code_required: A message with a code has been sent to your email
-        address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
     registrations:
-      signed_up_but_code_required: A message with a code has been sent to your email
-        address. Please copy and paste the received code in this page.
+      signed_up_but_code_required: A message with a code has been sent to your email address. Please copy and paste the received code in this page.
   password_validator:
     password_blank: can't be blank

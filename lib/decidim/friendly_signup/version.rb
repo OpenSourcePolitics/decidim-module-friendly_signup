@@ -3,8 +3,8 @@
 module Decidim
   # This holds the decidim-meetings version.
   module FriendlySignup
-    DECIDIM_VERSION = "0.27.0"
+    DECIDIM_VERSION = "0.27.4"
     COMPAT_DECIDIM_VERSION = "~> 0.27"
-    VERSION = "0.4.4"
+    VERSION = "0.4.5"
   end
 end

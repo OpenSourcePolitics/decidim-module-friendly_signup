@@ -4,9 +4,10 @@ require "decidim/dev"
 
 require "simplecov"
 SimpleCov.start "rails"
+
 if ENV["CODECOV"]
-  require "codecov"
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+  require "simplecov-cobertura"
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 end
 
 ENV["ENGINE_ROOT"] = File.dirname(__dir__)
