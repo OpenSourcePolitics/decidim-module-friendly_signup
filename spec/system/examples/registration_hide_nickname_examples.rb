@@ -29,7 +29,7 @@ shared_examples "on/off registration hide nickname" do
       expect(last_user.nickname).to eq("agent_smith_2")
     end
 
-    context "and use_confirmation_codes is disabled" do
+    context "and use_confirmation_codes is enabled" do
       before do
         allow(Decidim::FriendlySignup).to receive(:use_confirmation_codes).and_return(true)
       end
