@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 module Decidim
@@ -43,7 +45,7 @@ module Decidim
           end
 
           it "using confirmation_numbers params" do
-            post :create, params: {confirmation_token: user.confirmation_token, confirmation_numbers: [1,2,3,4] }
+            post :create, params: { confirmation_token: user.confirmation_token, confirmation_numbers: [1, 2, 3, 4] }
 
             expect(user.reload).to be_confirmed
             expect(response).to redirect_to(decidim_router.root_path)
@@ -62,15 +64,6 @@ module Decidim
         end
       end
 
-      describe "GET #skip" do
-        it_behaves_like "confirmation codes disabled"
-
-        it "signs in and redirects the user" do
-          get :skip, params: params
-          expect(response).to redirect_to("/")
-        end
-      end
-
       describe "#confirmation_token" do
         before do
           allow(controller).to receive(:params).and_return(confirmation_token: "1234")
@@ -82,7 +75,7 @@ module Decidim
 
         context "when confirmation_token is an array" do
           before do
-            allow(controller).to receive(:params).and_return(confirmation_token: ["1234", "4567", "6789"])
+            allow(controller).to receive(:params).and_return(confirmation_token: %w(1234 4567 6789))
           end
 
           it "returns the first confirmation_token" do

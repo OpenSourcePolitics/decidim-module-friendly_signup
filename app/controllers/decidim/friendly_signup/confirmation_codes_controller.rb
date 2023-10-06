@@ -22,10 +22,6 @@ module Decidim
         render :index
       end
 
-      def skip
-        sign_in_and_redirect user
-      end
-
       private
 
       def confirmation_form
