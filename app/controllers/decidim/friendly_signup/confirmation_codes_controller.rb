@@ -22,10 +22,6 @@ module Decidim
         render :index
       end
 
-      def skip
-        sign_in_and_redirect user
-      end
-
       private
 
       def confirmation_form
@@ -33,7 +29,17 @@ module Decidim
       end
 
       def user
-        @user ||= User.find_by(confirmation_token: params[:confirmation_token], organization: current_organization)
+        @user ||= User.find_by(confirmation_token: confirmation_token, organization: current_organization)
+      end
+
+      def confirmation_token
+        confirmation_token = params[:confirmation_token]
+
+        @confirmation_token ||= if confirmation_token.is_a?(Array)
+                                  params[:confirmation_token]&.first
+                                else
+                                  params[:confirmation_token]
+                                end
       end
 
       def require_unconfirmed_user

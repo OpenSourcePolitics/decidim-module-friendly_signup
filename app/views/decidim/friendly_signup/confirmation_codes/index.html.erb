@@ -27,7 +27,7 @@
             </div>
             <div class="actions text-center">
               <% if Decidim.unconfirmed_access_for != 0.days && user.active_for_authentication? %>
-                <%= link_to t(".skip_confirmation", delay: Decidim.unconfirmed_access_for/86400), decidim_friendly_signup.skip_confirmation_codes_path(confirmation_token: confirmation_form.confirmation_token) %>
+                <%= link_to t(".skip_confirmation", delay: Decidim.unconfirmed_access_for/86400), decidim.root_path %>
               <% end %>
             </div>
           <% end %>
