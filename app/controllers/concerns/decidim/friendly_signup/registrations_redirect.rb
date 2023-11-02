@@ -8,6 +8,15 @@ module Decidim
       extend ActiveSupport::Concern
 
       included do
+        def show
+          if Decidim::FriendlySignup.use_confirmation_codes.present?
+            respond_with_navigational(resource){ redirect_to decidim.new_user_confirmation_path }
+            return
+          end
+
+          super
+        end
+
         def after_sign_up_path_for(user)
           codes_confirmation_path(user) || super(user)
         end
