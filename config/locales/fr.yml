@@ -14,7 +14,7 @@ fr:
     devise:
       registrations:
         new:
-          password_help: "%{minimum_characters} caractères minimum, ne doit pas être trop commun (ex: 123456) et doit être différent de votre surnom et votre email."
+          password_help: "%{minimum_characters} caractères minimum, ne doit pas être trop commun (par exemple 123456) et doit être différent de votre pseudo et de votre email."
     forms:
       errors:
         decidim/user:

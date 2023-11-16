@@ -14,7 +14,7 @@ lt:
     devise:
       registrations:
         new:
-          password_help: "Mažiausiai %{minimum_characters} simboliai, jie neturėtų būti per dažni (pavyzdžiui, 123456) ir turi skirtis nuo jūsų slapyvardžio ir elektroninio pašto adreso."
+          password_help: "%{minimum_characters} minimalus rašmenų skaičius, rašmenys neturi būti pernelyg įprasti (pvz., 123456) ir turi skirtis nuo jūsų naudotojo vardo ir e. pašto adreso."
     forms:
       errors:
         decidim/user:
