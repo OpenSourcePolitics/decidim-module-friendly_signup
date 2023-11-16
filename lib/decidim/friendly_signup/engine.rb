@@ -12,9 +12,7 @@ module Decidim
 
       routes do
         devise_scope :user do
-          resources :confirmation_codes, only: [:index, :create] do
-            get :skip, on: :collection
-          end
+          resources :confirmation_codes, only: [:index, :create]
         end
         post :validate, to: "validator#validate"
         put :validate, to: "validator#validate"
