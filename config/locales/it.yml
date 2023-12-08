@@ -3,13 +3,13 @@ it:
   activemodel:
     attributes:
       confirmation_code:
-        code: Confirmation code
+        code: Codice di conferma
     errors:
       models:
         user:
           attributes:
             password:
-              password_blank: can't be blank
+              password_blank: non può essere vuoto
   decidim:
     devise:
       registrations:
@@ -18,18 +18,18 @@ it:
     forms:
       errors:
         decidim/user:
-          email: Please enter a valid email address
+          email: Per favore inserisci un indirizzo email valido
     friendly_signup:
       confirmation_code_form:
-        expired: Sorry, this code has expired, please generate a new one.
-        invalid: Code is invalid, please make sure to copy the code emailed to you.
-        invalid_token: Invalid token.
+        expired: Siamo spiacenti, questo codice è scaduto, si prega di generarne uno nuovo.
+        invalid: Codice non valido, assicurati di copiare il codice inviato per email.
+        invalid_token: Token non valido.
       confirmation_codes:
         create:
-          user_confirmed: Welcome %{name}! Your account has been succesfully confirmed!
+          user_confirmed: Benvenuto %{name}! Il tuo account è stato confermato con successo!
         index:
-          code_not_received: Didn't receive the code?
-          confirm_send_code: Do you want to resend the confirmation code to %{email}?<br>Be sure to check the spam folder just in case!
+          code_not_received: Codice non ricevuto?
+          confirm_send_code: Vuoi inviare nuovamente il codice di conferma a %{email}?<br>Assicurati di controllare la cartella spam nel caso!
           description: You should receive a 4 digit code at %{email}.<br>If you can't find it, please check your spam folder or wait  up to 10 minutes.
           enter_code: Enter code
           subtitle: You need to confirm your email address to be able to submit proposals, comment and vote.
