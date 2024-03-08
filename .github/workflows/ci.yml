@@ -112,7 +112,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Publish gem
-        uses: OpenSourcePolitics/decidim-publish-gem-action@master
+        uses: OpenSourcePolitics/publish-gem-action@master
         with:
           rubygems_api_key: ${{ secrets.RUBYGEMS_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
