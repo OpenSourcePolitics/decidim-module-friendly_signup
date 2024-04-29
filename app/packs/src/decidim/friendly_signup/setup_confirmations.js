@@ -13,6 +13,7 @@ $(() => {
       $inputBox.val(values[index]);
       $inputBox = $inputBox.next('input[type="number"]');
       if ($inputBox.length === 0) {
+        $form.find('button[type="submit"]').prop("disabled", true);
         $form.submit();
       }
     });
