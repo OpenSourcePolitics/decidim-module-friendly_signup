@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Decidim
   module FriendlySignup
     class RegistrationFormOverride < Decidim::RegistrationForm
@@ -6,9 +8,7 @@ module Decidim
       private
 
       def no_special_characters_in_email
-        if email =~ /[<>'"]/
-          errors.add(:email, "contains invalid characters")
-        end
+        errors.add(:email, "contains invalid characters") if email =~ /[<>'"]/
       end
     end
   end
