@@ -74,5 +74,11 @@ module Decidim
         end
       end
     end
+
+    context "when email contains a script tag" do
+      let(:email) { "<script>alert('XSS')</script>@example.org" }
+
+      it { is_expected.to be_invalid }
+    end
   end
 end
