@@ -79,6 +79,12 @@ module Decidim
       let(:email) { "<script>alert('XSS')</script>@example.org" }
 
       it { is_expected.to be_invalid }
+
+      context "when email contains invalid characters" do
+        let(:email) { 'user"@example.org' }
+
+        it { is_expected.to be_invalid }
+      end
     end
   end
 end
