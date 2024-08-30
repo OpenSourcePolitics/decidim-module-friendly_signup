@@ -8,7 +8,7 @@ module Decidim
       private
 
       def no_special_characters_in_email
-        errors.add(:email, "contains invalid characters") if email =~ /[<>'"]/
+        errors.add(:email, :invalid) if email =~ /[<>'"]/
       end
     end
   end
